@@ -1,0 +1,237 @@
+paths:
+
+  /users/self/related:
+    get:
+      operationId: "userselfrelated.get"
+      summary: "Returns related users"
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/UserRelatedList'
+    post:
+      operationId: "userselfrelated.post"
+      consumes:
+        - multipart/form-data
+      summary: "Create related user info"
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/UserRelated'
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/UserRelated'
+
+  /users/self/related/{userid}:
+    get:
+      operationId: "userselfrelated.get"
+      summary: "Returns user by id"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to return.
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/User'
+
+    put:
+      operationId: "userselfrelated.put"
+      consumes:
+        - multipart/form-data
+      consumes:
+        - multipart/form-data
+      summary: "Update user by id"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to return.
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/UserRelated'
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/UserRelated'
+
+    delete:
+      operationId: "userselfrelated.delete"
+      summary: "Delete user"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to delete.
+      responses:
+        200:
+          description: "Successful deleted user"
+
+
+
+  /users/self/related/{userid}/questionnaire:
+    get:
+      operationId: "userselfrelated.questionnaire.get"
+      summary: "Returns user questionnaire"
+      responses:
+        200:
+          description: "Successful read user questionnaire"
+          schema:
+            $ref: '#/definitions/Questionnaire'
+    post:
+      operationId: "userselfrelated.questionnaire.put"
+      summary: "Update user questionnaire"
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/Questionnaire'
+      responses:
+        200:
+          description: "Successful read user Questionnaire"
+          schema:
+            $ref: '#/definitions/Questionnaire'
+
+  /users/self/related/{userid}/covidtest:
+    get:
+      operationId: "userselfrelated.covidtest.get"
+      summary: "Returns user covidtest"
+      responses:
+        200:
+          description: "Successful read user covidtest"
+          schema:
+            $ref: '#/definitions/COVIDTest'
+    post:
+      operationId: "userselfrelated.covidtest.put"
+      summary: "Update user covidtest"
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/COVIDTest'
+      responses:
+        200:
+          description: "Successful read user covidtest"
+          schema:
+            $ref: '#/definitions/COVIDTest'
+
+  /users/self/related/{userid}/covidtest/{testId}:
+    put:
+      operationId: "userselfrelated.covidtest.put"
+      summary: "Update user covidtest"
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: path
+          name: testId
+          type: integer
+          required: true
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/COVIDTest'
+      responses:
+        200:
+          description: "Successful read user covidtest"
+          schema:
+            $ref: '#/definitions/COVIDTest'
+
+
+  /users/self/related/{userid}/covidtest/history:
+    get:
+      operationId: "userselfrelated.covidtest.get_history"
+      summary: "Returns user covidtest"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+      responses:
+        200:
+          description: "Successful read user covidtest"
+          schema:
+            $ref: '#/definitions/COVIDTests'
+
+  /users/self/related/{userid}/vitals:
+    get:
+      operationId: "userselfrelated.vitals.get"
+      summary: "Returns user vitals"
+      responses:
+        200:
+          description: "Successful read user vitals"
+          schema:
+            $ref: '#/definitions/VitalsList'
+    post:
+      operationId: "userselfrelated.vitals.put"
+      summary: "Update user vitals"
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/Vitals'
+      responses:
+        200:
+          description: "Successful read user vitals"
+          schema:
+            $ref: '#/definitions/Vitals'
+
+
+  /users/self/teststatuses:
+    get:
+      summary: "Returns user + related test statuses"
+      operationId: "userselfteststatuses.get"
+      responses:
+        200:
+          description: "Successful read user covidtest"
+          schema:
+            $ref: '#/definitions/TestsSummaryList'
+
+
+definitions:
+
+  UserRelated:
+    allOf:
+      - $ref: '#/definitions/UserUpdate'
+      - type: object
+        properties:
+          relationReason:
+            type: string
+  UserRelatedList:
+    type: array
+    items:
+      $ref: '#/definitions/UserRelated'
+
+
+  TestsSummary:
+    type: object
+    properties:
+      userId:
+        type: number
+      questionnairyDate:
+        type: string
+      questionnairyExpDate:
+        type: string
+      covidtestDate:
+        type: string
+      covidtestExpDate:
+        type: string
+
+  TestsSummaryList:
+    type: array
+    items:
+      $ref: '#/definitions/TestsSummary'
+

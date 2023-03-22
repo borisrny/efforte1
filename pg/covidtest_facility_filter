@@ -1,0 +1,70 @@
+TABLE='questionnairefilter'
+IDXNAME="${TABLE}_facilty_idx"
+IDXDEF='(facilityid ASC NULLS LAST)'
+SQL="
+drop TABLE IF EXISTS ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+  facilityid integer,
+
+  fever BOOLEAN DEFAULT FALSE,
+  fatigue BOOLEAN DEFAULT FALSE,
+  cough BOOLEAN DEFAULT FALSE,
+  aches_pains BOOLEAN DEFAULT FALSE,
+  runny_nose BOOLEAN DEFAULT FALSE,
+  sneezing BOOLEAN DEFAULT FALSE,
+  loss_of_taste BOOLEAN DEFAULT FALSE,
+  shortnes_of_breath BOOLEAN DEFAULT FALSE,
+  headache BOOLEAN DEFAULT FALSE,
+  sore_throat BOOLEAN DEFAULT FALSE,
+  nausea_vomiting BOOLEAN DEFAULT FALSE,
+  diarrhea BOOLEAN DEFAULT FALSE,
+  number_of_positives integer,
+  valid_hours integer
+);
+CREATE INDEX ${IDXNAME} ON ${SCHEMA}.${TABLE} USING btree ${IDXDEF} TABLESPACE pg_default;
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"
+
+TABLE='covidtestfilter'
+IDXNAME="${TABLE}_user_idx"
+IDXDEF='(facilityid ASC NULLS LAST)'
+SQL="
+drop TABLE IF EXISTS ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+  facilityid integer,
+  igm BOOLEAN DEFAULT FALSE,
+  igg BOOLEAN DEFAULT FALSE,
+  viral_ag_load BOOLEAN DEFAULT FALSE,
+  overall_status BOOLEAN DEFAULT FALSE,
+  number_of_positives integer,
+  valid_days integer
+);
+CREATE INDEX ${IDXNAME} ON ${SCHEMA}.${TABLE} USING btree ${IDXDEF} TABLESPACE pg_default;
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"
+
+TABLE='vitalsfilter'
+IDXNAME="${TABLE}_user_idx"
+IDXDEF='(facilityid ASC NULLS LAST)'
+SQL="
+drop TABLE IF EXISTS ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+  facilityid integer,
+  temp double precision,
+  percent double precision,
+  bp_systolic_l double precision,
+  bp_systolic_h double precision,
+  bp_diastolic_l double precision,
+  bp_diastolic_h double precision,
+  number_of_positives integer,
+  valid_hours integer
+);
+CREATE INDEX ${IDXNAME} ON ${SCHEMA}.${TABLE} USING btree ${IDXDEF} TABLESPACE pg_default;
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"

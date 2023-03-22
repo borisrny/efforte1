@@ -1,0 +1,23 @@
+TABLE='questionnaire'
+IDXNAME='questionnaire_user_idx'
+IDXDEF='(userid ASC NULLS LAST)'
+SQL="
+drop TABLE IF EXISTS ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+  userid integer,
+  fever BOOLEAN DEFAULT FALSE,
+  fatigue BOOLEAN DEFAULT FALSE,
+  cough BOOLEAN DEFAULT FALSE,
+  aches_pains BOOLEAN DEFAULT FALSE,
+  runny_nose BOOLEAN DEFAULT FALSE,
+  sneezing BOOLEAN DEFAULT FALSE,
+  loss_of_taste BOOLEAN DEFAULT FALSE,
+  postuser integer,
+  postfacility integer DEFAULT NULL,
+  posttimestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX ${IDXNAME} ON ${SCHEMA}.${TABLE} USING btree ${IDXDEF} TABLESPACE pg_default;
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"

@@ -1,0 +1,75 @@
+paths:
+
+  /testfacility/patients:
+    get:
+      operationId: "testfacilities.patients.get"
+      summary: ""
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: '#/definitions/UserList'
+
+  /testfacility/patients/{userId}:
+    get:
+      operationId: "testfacilities.patients.getuser"
+      summary: ""
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: '#/definitions/User'
+
+  /testfacility/patients/{userId}/covid:
+    get:
+      operationId: "testfacilities.patients.getusercovid"
+      summary: ""
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: '#/definitions/COVIDTests'
+
+    post:
+      operationId: "testfacilities.patients.postcovid"
+      summary: "covidtest"
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/COVIDTest'
+      responses:
+        201:
+          description: "Add COVIDTest"
+          schema:
+            $ref: '#/definitions/COVIDTests'
+
+
+  /testfacility/patients/{userId}/vitals:
+    get:
+      operationId: "testfacilities.patients.getuservitals"
+      summary: ""
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: '#/definitions/VitalsList'
+
+    post:
+      operationId: "testfacilities.patients.postvitals"
+      summary: "covidtest"
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/Vitals'
+      responses:
+        201:
+          description: "Add Vitals"
+          schema:
+            $ref: '#/definitions/Vitals'
+

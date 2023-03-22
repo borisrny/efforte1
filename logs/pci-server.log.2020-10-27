@@ -1,0 +1,421 @@
+PID:7117 2020-10-30 07:38:43,987 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+PID:7117 2020-10-30 07:38:43,988 - werkzeug - INFO -  * Restarting with stat
+PID:7119 2020-10-30 07:38:44,438 - werkzeug - WARNING -  * Debugger is active!
+PID:7119 2020-10-30 07:38:44,447 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:7119 2020-10-30 07:39:11,884 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:11] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:11,888 - __main__ - ERROR - 'NoneType' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 122, in wrapper
+    resp = view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 113, in wrapper
+    return view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 270, in decorated_view
+    elif not current_user.is_authenticated:
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 27, in load_user_from_rqst
+    user = auth_uid_from_rqst(rqst)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 59, in auth_uid_from_rqst
+    auth_keys = auth_headers.split()
+AttributeError: 'NoneType' object has no attribute 'split'
+PID:7119 2020-10-30 07:39:11,895 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:11] "[31m[1mGET /api/users/self/logindescription HTTP/1.1[0m" 450 -
+PID:7119 2020-10-30 07:39:21,154 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:21] "[37mOPTIONS /api/auth?appType=facility HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:22,008 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:22] "[37mPOST /api/auth?appType=facility HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:22,060 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:22] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:22,765 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:22] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:22,771 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:22] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:23,531 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:23] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:25,758 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:25] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:56,756 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:56] "[37mOPTIONS /api/auth?appType=HR HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:57,187 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:57] "[37mPOST /api/auth?appType=HR HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:57,216 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:57] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:39:57,687 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:39:57] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:41:17,896 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:41:17] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Thu%20Oct%2001%202020%2007:40:00%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2007:40:00%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:41:26,946 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:41:26] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Thu%20Oct%2001%202020%2007:40:00%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2007:40:00%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:42:40,282 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:42:40] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:42:40,308 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:42:40] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:42:41,156 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:42:41] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:42:41,549 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:42:41] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:42:49,962 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:42:49] "[37mOPTIONS /api/business/users/health?status=0&role=0 HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:42:53,120 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:42:53] "[37mGET /api/business/users/health?status=0&role=0 HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:43:35,177 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:43:35] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2007:43:33%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2007:43:33%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:43:38,704 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:43:38] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Thu%20Oct%2001%202020%2007:43:33%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2007:43:33%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:43:42,227 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:43:42] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2007:43:33%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2007:43:33%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:43:47,934 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:43:47] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Thu%20Oct%2001%202020%2007:43:33%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2007:43:33%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:44:34,910 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:44:34] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:44:34,934 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:44:34] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:44:35,874 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:44:35] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:44:36,186 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:44:36] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:44:55,278 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:44:55] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:44:55,309 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:44:55] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:44:56,231 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:44:56] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:44:56,440 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:44:56] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:45:15,177 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:45:15] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:45:15,205 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:45:15] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:45:16,125 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:45:16] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 07:45:16,411 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 07:45:16] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:07:43,728 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:07:43] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:07:43,755 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:07:43] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:07:44,847 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:07:44] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:07:45,152 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:07:45] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:07:58,211 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:07:58] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:07:58,235 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:07:58] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:07:59,031 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:07:59] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:07:59,439 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:07:59] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:08:03,295 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:08:03] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:08:03,341 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:08:03] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:08:04,167 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:08:04] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:08:04,493 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:08:04] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:08:22,189 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:08:22] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:08:22,249 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:08:22] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:08:23,131 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:08:23] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:08:23,479 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:08:23] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:09:36,611 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:09:36] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:09:36,635 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:09:36] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:09:37,484 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:09:37] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:09:37,913 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:09:37] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:09:58,595 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:09:58] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:09:58,620 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:09:58] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:09:59,479 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:09:59] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:09:59,821 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:09:59] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:11:06,526 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:11:06] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:11:06,548 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:11:06] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:11:07,505 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:11:07] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:11:07,794 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:11:07] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:11:15,185 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:11:15] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Thu%20Oct%2001%202020%2008:11:08%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2008:11:08%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:11:24,442 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:11:24] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Thu%20Oct%2001%202020%2008:11:08%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2008:11:08%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:14:14,842 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:14:14] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:14:14,924 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:14:14] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:14:15,789 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:14:15] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:14:16,133 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:14:16] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:15:20,292 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:15:20] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:15:20,331 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:15:20] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:15:21,272 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:15:21] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:15:21,501 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:15:21] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:22:06,815 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:22:06] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:22:06,851 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:22:06] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:22:07,825 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:22:07] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:7119 2020-10-30 08:22:08,025 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 08:22:08] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10066 2020-10-30 15:06:01,916 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+PID:10066 2020-10-30 15:06:01,917 - werkzeug - INFO -  * Restarting with stat
+PID:10067 2020-10-30 15:06:02,366 - werkzeug - WARNING -  * Debugger is active!
+PID:10067 2020-10-30 15:06:02,373 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:10067 2020-10-30 15:10:55,658 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:10:55] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:10:55,695 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:10:55] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:10:56,052 - __main__ - ERROR - trying to put unkeyed connection
+Traceback (most recent call last):
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 122, in wrapper
+    resp = view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 113, in wrapper
+    return view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 270, in decorated_view
+    elif not current_user.is_authenticated:
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 27, in load_user_from_rqst
+    user = auth_uid_from_rqst(rqst)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 63, in auth_uid_from_rqst
+    rec = memberuser_get_user(u_id)
+  File "/Users/boris/PycharmProjects/pci-service/src/model/memberuser.py", line 17, in memberuser_get_user
+    user_rec = user_get(recid)
+  File "/Users/boris/PycharmProjects/pci-service/src/model/user.py", line 59, in user_get
+    doc = pg_get(util_get_config(), 'users', recid)
+  File "/Users/boris/PycharmProjects/pci-service/src/util/pg.py", line 78, in pg_get
+    pg_return_connection(con)
+  File "/Users/boris/PycharmProjects/pci-service/src/util/pg.py", line 37, in pg_return_connection
+    _pg_pool.putconn(con)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/psycopg2/pool.py", line 177, in putconn
+    self._putconn(conn, key, close)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/psycopg2/pool.py", line 103, in _putconn
+    raise PoolError("trying to put unkeyed connection")
+psycopg2.pool.PoolError: trying to put unkeyed connection
+PID:10067 2020-10-30 15:10:56,061 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:10:56] "[31m[1mGET /api/users HTTP/1.1[0m" 450 -
+PID:10067 2020-10-30 15:10:56,984 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:10:56] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:11:18,070 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:11:18] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:11:02%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:11:02%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:11:24,966 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:11:24] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:11:02%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:11:02%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:12:12,435 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:12:12] "[37mOPTIONS /api/auth?appType=testfacility HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:12:12,909 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:12:12] "[37mPOST /api/auth?appType=testfacility HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:12:35,750 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:12:35] "[37mOPTIONS /api/auth?appType=HR HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:12:36,208 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:12:36] "[37mPOST /api/auth?appType=HR HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:12:36,231 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:12:36] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:12:36,751 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:12:36] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:12:42,727 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:12:42] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:12:39%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:12:39%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:12:49,483 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:12:49] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:12:39%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:12:39%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:14:15,192 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:14:15] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:14:15,279 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:14:15] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:14:16,021 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:14:16] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:14:16,387 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:14:16] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:17:14,801 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:17:14] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:17:14,865 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:17:14] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:17:15,815 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:17:15] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:17:16,070 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:17:16] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:17:19,246 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:17:19] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:17:17%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:17:17%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:17:28,274 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:17:28] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:17:17%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:17:17%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:19:20,877 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:19:20] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:19:20,958 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:19:20] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:19:21,693 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:19:21] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:19:21,965 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:19:21] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:19:30,160 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:19:30] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:19:26%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:19:26%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:19:36,711 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:19:36] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:19:26%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:19:26%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:20:18,482 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:20:18] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:20:18,529 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:20:18] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:20:19,463 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:20:19] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:20:19,744 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:20:19] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:20:43,671 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:20:43] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:20:43,712 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:20:43] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:20:44,669 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:20:44] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:20:44,936 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:20:44] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:21:33,584 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:21:33] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:21:33,653 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:21:33] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:21:34,376 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:21:34] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:21:34,674 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:21:34] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:22:05,093 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:22:05] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:22:05,121 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:22:05] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:22:06,056 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:22:06] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:22:06,250 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:22:06] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:22:22,899 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:22:22] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:22:08%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:22:08%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:22:31,913 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:22:31] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:22:08%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:22:08%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:25:15,866 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:25:15] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:25:15,889 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:25:15] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:25:16,882 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:25:16] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:25:17,094 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:25:17] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:25:22,587 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:25:22] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:25:20%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:25:20%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:25:29,171 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:25:29] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:25:20%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:25:20%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:26:50,748 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:26:50] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:26:50,771 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:26:50] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:26:51,703 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:26:51] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:26:51,910 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:26:51] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:26:54,905 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:26:54] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:26:52%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:26:52%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:27:02,517 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:27:02] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:26:52%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:26:52%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:05,577 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:05] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:05,599 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:05] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:06,529 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:06] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:06,824 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:06] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:23,454 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:23] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:28:22%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:28:22%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:26,528 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:26] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:26,552 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:26] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:27,444 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:27] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:27,786 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:27] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:29,051 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:29] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:28:27%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:28:27%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:30,348 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:30] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:28:22%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:28:22%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:35,618 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:35] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:28:27%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:28:27%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:53,105 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:53] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:53,128 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:53] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:54,113 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:54] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:28:54,413 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:28:54] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:30:09,379 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:30:09] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:30:09,403 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:30:09] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:30:10,462 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:30:10] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:30:10,707 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:30:10] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:30:13,011 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:30:13] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:30:11%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:30:11%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:30:19,650 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:30:19] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:30:11%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:30:11%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:31:33,816 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:31:33] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:31:33,839 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:31:33] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:31:34,587 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:31:34] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:31:35,582 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:31:35] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:31:39,559 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:31:39] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:31:37%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:31:37%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:31:47,775 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:31:47] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:31:37%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:31:37%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:33:22,457 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:33:22] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:33:22,521 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:33:22] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:33:23,520 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:33:23] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:33:23,814 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:33:23] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:33:55,359 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:33:55] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:33:52%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:33:52%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:34:02,073 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:34:02] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:33:52%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:33:52%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:04,773 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:04] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:04,796 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:04] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:05,743 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:05] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:06,064 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:06] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:11,868 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:11] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:11,891 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:11] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:12,735 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:12] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:13,025 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:13] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:16,257 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:16] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:37:14%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:37:14%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:37:22,932 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:37:22] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:37:14%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:37:14%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:38:20,827 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:38:20] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:38:20,850 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:38:20] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:38:21,786 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:38:21] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:38:22,198 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:38:22] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:41:21,086 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:41:21] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:41:21,109 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:41:21] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:41:21,980 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:41:21] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:41:22,269 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:41:22] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:41:30,246 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:41:30] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:41:28%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:41:28%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:41:37,101 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:41:37] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:41:28%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:41:28%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:42:51,318 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:42:51] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:42:51,341 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:42:51] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:42:52,307 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:42:52] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:42:52,588 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:42:52] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:42:56,651 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:42:56] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:42:55%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:42:55%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:43:03,353 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:43:03] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:42:55%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:42:55%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:43:53,737 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:43:53] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:43:53,762 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:43:53] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:43:54,686 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:43:54] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:43:54,980 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:43:54] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:45:17,069 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:45:17] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:45:17,092 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:45:17] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:45:18,027 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:45:18] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:45:18,347 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:45:18] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:45:30,652 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:45:30] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:45:29%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:45:29%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:45:37,495 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:45:37] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:45:29%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:45:29%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:47:39,191 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:47:39] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:47:39,216 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:47:39] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:47:40,100 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:47:40] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:47:40,366 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:47:40] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:50:45,840 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:50:45] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:50:44%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:50:44%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:50:52,851 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:50:52] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:50:44%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:50:44%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:51:46,184 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:51:46] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:51:46,218 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:51:46] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:51:47,168 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:51:47] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:51:47,467 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:51:47] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:52:28,684 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:52:28] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:52:27%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:52:27%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:52:35,957 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:52:35] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:52:27%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:52:27%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:55:20,906 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:55:20] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:55:20,931 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:55:20] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:55:21,921 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:55:21] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:55:22,511 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:55:22] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:56:00,689 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:56:00] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:56:01,281 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:56:01] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:56:03,171 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:56:03] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:56:01%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:56:01%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:56:09,740 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:56:09] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2015:56:01%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2015:56:01%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:58:56,306 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:58:56] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:58:56,331 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:58:56] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:58:57,245 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:58:57] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 15:58:57,451 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 15:58:57] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:00:03,388 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:00:03] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:00:02%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:00:02%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:00:10,449 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:00:10] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:00:02%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:00:02%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:04,824 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:04] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:04,857 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:04] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:05,715 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:05] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:06,030 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:06] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:09,357 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:09] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:01:08%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:01:08%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:15,814 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:15] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:01:08%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:01:08%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:56,372 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:56] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:56,442 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:56] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:57,366 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:57] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:01:57,575 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:01:57] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:02:44,319 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:02:44] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:02:44,352 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:02:44] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:02:45,412 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:02:45] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:02:45,686 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:02:45] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:03:47,610 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:03:47] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:03:47,710 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:03:47] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:03:48,423 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:03:48] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:03:48,719 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:03:48] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:03:53,133 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:03:53] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:03:49%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:03:49%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:03:59,610 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:03:59] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:03:49%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:03:49%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:07:02,583 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:07:02] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:07:02,632 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:07:02] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:07:03,590 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:07:03] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:07:03,777 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:07:03] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:07:06,949 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:07:06] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:07:05%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:07:05%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:07:13,472 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:07:13] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:07:05%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:07:05%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:08:27,270 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:08:27] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:08:27,309 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:08:27] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:08:28,200 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:08:28] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:08:28,594 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:08:28] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:08:35,027 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:08:35] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:08:33%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:08:33%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:08:41,968 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:08:41] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:08:33%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:08:33%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:09:12,569 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:09:12] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:09:12,639 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:09:12] "[37mOPTIONS /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:09:13,363 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:09:13] "[37mGET /api/users HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:09:13,643 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:09:13] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:38:44,719 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:38:44] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:38:43%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:38:43%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:39:03,055 - __main__ - ERROR - SSL SYSCALL error: Operation timed out
+Traceback (most recent call last):
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 122, in wrapper
+    resp = view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 113, in wrapper
+    return view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 270, in decorated_view
+    elif not current_user.is_authenticated:
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 27, in load_user_from_rqst
+    user = auth_uid_from_rqst(rqst)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 63, in auth_uid_from_rqst
+    rec = memberuser_get_user(u_id)
+  File "/Users/boris/PycharmProjects/pci-service/src/model/memberuser.py", line 17, in memberuser_get_user
+    user_rec = user_get(recid)
+  File "/Users/boris/PycharmProjects/pci-service/src/model/user.py", line 59, in user_get
+    doc = pg_get(util_get_config(), 'users', recid)
+  File "/Users/boris/PycharmProjects/pci-service/src/util/pg.py", line 75, in pg_get
+    cur.execute('SELECT * FROM {} WHERE {}=%s'.format(table, idfield), (recid,))
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/psycopg2/extras.py", line 248, in execute
+    return super(RealDictCursor, self).execute(query, vars)
+psycopg2.DatabaseError: SSL SYSCALL error: Operation timed out
+
+PID:10067 2020-10-30 16:39:03,060 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:39:03] "[31m[1mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:38:43%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:38:43%20GMT-0400%20(EDT) HTTP/1.1[0m" 450 -
+PID:10067 2020-10-30 16:39:14,106 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:39:14] "[37mOPTIONS /api/auth?appType=facility HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:39:14,857 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:39:14] "[37mPOST /api/auth?appType=facility HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:39:14,883 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:39:14] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:39:15,562 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:39:15] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:39:15,568 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:39:15] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:39:16,379 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:39:16] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:40:07,461 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:40:07] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:40:07,483 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:40:07] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:40:08,858 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:40:08] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:40:08,864 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:40:08] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:40:08,913 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:40:08] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:40:09,615 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:40:09] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:40:12,533 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:40:12] "[37mOPTIONS /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:40:10%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:40:10%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -
+PID:10067 2020-10-30 16:40:19,055 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2020 16:40:19] "[37mGET /api/business/users/queureport?status=0&role=0&rangeType=0&from=Sun%20Oct%2025%202020%2016:40:10%20GMT-0400%20(EDT)&to=Fri%20Oct%2030%202020%2016:40:10%20GMT-0400%20(EDT) HTTP/1.1[0m" 200 -

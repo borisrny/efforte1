@@ -1,0 +1,30 @@
+include: [./config/common.yaml]
+
+apiBaseURL: 'http://localhost:5000/api'
+
+#pg:
+#  user: postgres
+#  pwd: Kikiriki1317!
+#  db: pci
+#  host: localhost
+#  port: 5432
+#  schema: public
+#  owner: postgres
+pg:
+  user: postgres
+  pwd: postgres
+  db: pci
+  host: 'devel.coce3ikt7g9w.us-east-2.rds.amazonaws.com'
+  port: 5432
+  schema: public
+  owner: postgres
+
+auth:
+  pubkFile: '/Users/boris/.ssh/jwt.pub'
+  privkFile: '/Users/boris/.ssh/jwt.pem'
+
+aws:
+  profile: pci
+
+s3:
+  name: pci-devel

@@ -1,0 +1,147 @@
+paths:
+
+  /users/questionnaires:
+    get:
+      operationId: "questionnaires.list"
+      summary: "questionnaires"
+      responses:
+        200:
+          description: "questionnaires list"
+          schema:
+            $ref: '#/definitions/Questionnaires'
+
+    post:
+      operationId: "questionnaires.post"
+      summary: "questionnaires"
+      parameters:
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/Questionnaire'
+      responses:
+        201:
+          description: "Add Questionnaire"
+          schema:
+            $ref: '#/definitions/Questionnaire'
+
+  /questionnaires/current:
+    get:
+      operationId: "questionnaires.current"
+      summary: "questionnaires"
+      responses:
+        201:
+          description: "Get specific test"
+          schema:
+            $ref: '#/definitions/Questionnaire'
+
+  /users/covidtest:
+    get:
+      operationId: "covidtest.list"
+      summary: "covidtests"
+      responses:
+        200:
+          description: "covidtests list"
+          schema:
+            $ref: '#/definitions/COVIDTests'
+
+    post:
+      operationId: "covidtest.post"
+      summary: "covidtest"
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/COVIDTest'
+      responses:
+        201:
+          description: "Add COVIDTest"
+          schema:
+            $ref: '#/definitions/COVIDTests'
+
+  /covidtest/current:
+    get:
+      operationId: "covidtest.current"
+      summary: "covidtest"
+      responses:
+        201:
+          description: "Get specific test"
+          schema:
+            $ref: '#/definitions/COVIDTest'
+
+
+definitions:
+
+  Questionnaire:
+    type: object
+    properties:
+      id:
+        type: number
+      fever:
+        type: boolean
+      fatigue:
+        type: boolean
+      cough:
+        type: boolean
+      aches_pains:
+        type: boolean
+      runny_nose:
+        type: boolean
+      sneezing:
+        type: boolean
+      loss_of_taste:
+        type: boolean
+      shortnes_of_breath:
+        type: boolean
+      headache:
+        type: boolean
+      sore_throat:
+        type: boolean
+      nausea_vomiting:
+        type: boolean
+      diarrhea:
+        type: boolean
+      postdate:
+        type: string
+        example: '03-13-2019'
+
+  Questionnaires:
+    type: array
+    items:
+      $ref: '#/definitions/Questionnaire'
+
+  COVIDTest:
+    type: object
+    properties:
+      id:
+        type: number
+      date_of_test:
+        type: string
+        example: '03-13-2019'
+      igm:
+        type: boolean
+      igg:
+        type: boolean
+      viral_ag_load:
+        type: boolean
+      overall_status:
+        type: boolean
+      picture:
+        type: binary
+        required: false
+      requisition:
+        type: binary
+        required: false
+      pictureURL:
+        type: string
+        required: false
+      requisitionTestURL:
+        type: string
+        required: false
+
+
+  COVIDTests:
+    type: array
+    items:
+      $ref: '#/definitions/COVIDTest'

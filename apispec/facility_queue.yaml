@@ -1,0 +1,114 @@
+paths:
+
+  /facility/queue:
+    get:
+      operationId: "facilityqueue.get"
+      summary: "Returns facility queue"
+      responses:
+        200:
+          description: "Successful facility queue"
+          schema:
+            $ref: '#/definitions/FacilityQueueUsers'
+
+
+  /facility/queue/{facilityId}:
+    post:
+      operationId: "facilityqueue.post"
+      summary: "Add user to facility queue"
+      parameters:
+        - in: path
+          name: facilityId
+          schema:
+            type: integer
+          required: true
+          description: facility ID
+        - in: body
+          required: false
+          name: users
+          schema:
+            $ref: '#/definitions/IDs'
+
+      responses:
+        200:
+          description: "Successful add user to the queue"
+          schema:
+            $ref: '#/definitions/FacilityQueueAddResp'
+
+
+  /facility/queue/{userId}/grant:
+    put:
+      operationId: "facilityqueue.put"
+      summary: "grant/deny access to facility"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: integer
+          required: true
+          description: user ID
+        - in: query
+          name: status
+          schema:
+            type: boolean
+          required: true
+          description: grant (true)/decline (false) access
+
+      responses:
+        200:
+          description: "Successful add user to the queue"
+
+
+definitions:
+
+  FacilityQueueItem:
+    type: object
+    properties:
+      userid:
+        type: integer
+      facilityid:
+        type: integer
+      time_requested:
+        type: string
+      time_in:
+        type: string
+      time_out:
+        type: string
+      access_status:
+        type: integer
+      related:
+        type: integer
+
+  FacilityQueueUser:
+    type: object
+    properties:
+      requirementsMatch:
+        type: boolean
+      queueItem:
+          $ref: '#/definitions/FacilityQueueItem'
+      user:
+          $ref: '#/definitions/User'
+      questionnaire:
+          $ref: '#/definitions/Questionnaire'
+      covidTest:
+        $ref: '#/definitions/COVIDTest'
+      vitals:
+        $ref: '#/definitions/Vitals'
+
+
+  FacilityQueueUsers:
+    type: array
+    items:
+      $ref: '#/definitions/FacilityQueueUser'
+
+  FacilityQueueAddRespNode:
+    type: object
+    properties:
+      id:
+        type: integer
+      status:
+        type: boolean
+
+  FacilityQueueAddResp:
+    type: array
+    items:
+      $ref: '#/definitions/FacilityQueueAddRespNode'

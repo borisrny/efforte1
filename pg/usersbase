@@ -1,0 +1,32 @@
+TABLE='users'
+SQL="
+drop TABLE IF EXISTS  ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+  first_name character varying,
+  last_name character varying,
+  dob date,
+  ssn TEXT,
+  phone_number character varying,
+  email character varying,
+  street1 TEXT,
+  street2 TEXT,
+  city TEXT,
+  county TEXT,
+  state TEXT,
+  postal TEXT,
+  country TEXT default 'US',
+  username character varying,
+  password character varying DEFAULT NULL,
+  roles integer[]
+);
+CREATE UNIQUE INDEX user_username_idx ON ${SCHEMA}.${TABLE} USING btree
+    (username COLLATE pg_catalog."default" ASC NULLS LAST) TABLESPACE pg_default;
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"
+
+SQL="
+INSERT INTO ${SCHEMA}.${TABLE} (username, first_name, last_name, password, roles) VALUES ('admin', 'admin', 'admin', 'admin', array[1]);
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"

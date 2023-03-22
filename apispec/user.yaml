@@ -1,0 +1,87 @@
+paths:
+
+  /users/self/logindescription:
+    get:
+      operationId: "usersellogindescription.get"
+      summary: ""
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: '#/definitions/LoginDescription'
+
+
+
+definitions:
+
+  User:
+    allOf:
+      - $ref: '#/definitions/Address'
+      - type: object
+        properties:
+          id:
+            type: integer
+          username:
+            type: string
+          first_name:
+            type: string
+          last_name:
+            type: string
+          dob:
+            type: string
+            example: '03-13-2019'
+          ssn:
+            type: string
+            required: false
+            example: '111-11-1111'
+          phone_number:
+            type: string
+          email:
+            type: string
+          avatar:
+            type: string
+            required: false
+          roles:
+            type: array
+            items:
+              type: integer
+
+  UserList:
+    type: array
+    items:
+      $ref: '#/definitions/User'
+
+
+  UserUpdate:
+    allOf:
+      - $ref: '#/definitions/User'
+      - type: object
+        properties:
+          profileImage:
+            type: binary
+            required: false
+
+  UserActivation:
+    allOf:
+      - $ref: '#/definitions/User'
+      - type: object
+        properties:
+          activationstatus:
+            type: integer
+
+  Users:
+    type: array
+    items:
+      $ref: '#/definitions/UserActivation'
+
+  LoginDescription:
+    type: object
+    properties:
+      username:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      companyName:
+        type: string

@@ -1,0 +1,92 @@
+paths:
+  /business/testrequirements:
+    get:
+      operationId: "testrequirements.get"
+      summary: "Test requirements for facility"
+      responses:
+        200:
+          description: "Successful read VitalsRequirements"
+          schema:
+            $ref: '#/definitions/BussinessAccessRequirements'
+
+    post:
+      operationId: "testrequirements.post"
+      parameters:
+        - in: body
+          name: testrequirements
+          schema:
+            $ref: '#/definitions/BussinessAccessRequirements'
+      responses:
+        201:
+          description: "Successful create BussinessAccessRequirements"
+          schema:
+            $ref: '#/definitions/BussinessAccessRequirements'
+
+    put:
+      operationId: "testrequirements.put"
+      parameters:
+        - in: body
+          name: testrequirements
+          schema:
+            $ref: '#/definitions/BussinessAccessRequirements'
+      responses:
+        201:
+          description: "Successful updated BussinessAccessRequirements"
+          schema:
+            $ref: '#/definitions/BussinessAccessRequirements'
+
+
+definitions:
+
+  BussinessAccessRequirements:
+    type: object
+    properties:
+      vitalRequirements:
+        $ref: '#/definitions/VitalsRequirements'
+      covidTest:
+        $ref: '#/definitions/COVIDTestRequirements'
+      questionnaireRequirements:
+        $ref: '#/definitions/QuestionnaireRequirements'
+
+  VitalsRequirements:
+    allOf:
+      - type: object
+        properties:
+          id:
+            type: integer
+          temp:
+            type: number
+          percent:
+            type: number
+          bp_systolic_l:
+            type: number
+          bp_systolic_h:
+            type: number
+          bp_diastolic_l:
+            type: number
+          bp_diastolic_h:
+            type: number
+          number_of_positives:
+            type: integer
+          valid_hours:
+            type: integer
+
+  QuestionnaireRequirements:
+    allOf:
+      - $ref: '#/definitions/Questionnaire'
+      - type: object
+        properties:
+          number_of_positives:
+            type: integer
+          valid_hours:
+            type: integer
+
+  COVIDTestRequirements:
+    allOf:
+      - $ref: '#/definitions/COVIDTest'
+      - type: object
+        properties:
+          number_of_positives:
+            type: integer
+          valid_days:
+            type: integer

@@ -1,0 +1,284 @@
+paths:
+
+  /business/users:
+    get:
+      operationId: "business.user_list"
+      summary: "Returns list of users"
+      parameters:
+        - in: query
+          name: status
+          type: integer
+          enum: [0,1,2,3]
+          default: 0
+          description: "0 - all, 1 - activated, 2 - pending activation, 3 - removed"
+        - in: query
+          name: firstname
+          type: string
+          required: false
+          default: null
+        - in: query
+          name: lastname
+          type: string
+          required: false
+          default: null
+      responses:
+        200:
+          description: "Successful read user list"
+          schema:
+            $ref: '#/definitions/Users'
+
+    post:
+      operationId: "business.create_user"
+      summary: "Create user - user not in DB and HR needs a way to create new user"
+      parameters:
+        - in: body
+          name: userinfo
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        201:
+          description: "Successful create user"
+          schema:
+            $ref: '#/definitions/User'
+
+  /businesses/registration:
+    post:
+      operationId: "memberuser.register"
+      parameters:
+        - in: path
+          name: businessid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the business to delete.
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/Registration'
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/User'
+
+
+  /business/users/{userid}:
+    get:
+      operationId: "business.get_user"
+      summary: "Returns user by id"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to return.
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/User'
+
+    delete:
+      operationId: "business.delete_user"
+      summary: "Unregister from company"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to return.
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/User'
+
+  /business/users/{userid}/invite:
+    post:
+      operationId: "business.invite_user"
+      summary: "Invite user by id"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: User ID.
+      responses:
+        200:
+          description: "Successful send invitation"
+
+
+  /business/users/{userid}/suspend:
+    post:
+      operationId: "business.suspend_user"
+      summary: "Suspend user - do not require test but still employee"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: User ID.
+      responses:
+        200:
+          description: "Successful send invitation"
+
+
+  /business/notifications:
+    get:
+      operationId: "business.notification_list"
+      summary: "Returns list of notifications"
+      parameters:
+        - in: query
+          name: fromdate
+          type: string
+          required: false
+          default: null
+          description: "Start Date"
+        - in: query
+          name: todate
+          type: string
+          required: false
+          default: null
+          description: "end Date"
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/Notifications'
+
+    post:
+      operationId: "business.notification_post"
+      summary: "Create notification for company users"
+      parameters:
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/Notification'
+      responses:
+        201:
+          description: "Successful create notification"
+          schema:
+            $ref: '#/definitions/Notification'
+
+  /business/notifications/{notifid}:
+    get:
+      operationId: "business.notification_get"
+      summary: "Returns notification"
+      parameters:
+        - in: path
+          name: notifid
+          required: true
+          type: integer
+          minimum: 1
+          description: "The ID of the notification to return."
+      responses:
+        200:
+          description: "Successful notification"
+          schema:
+            $ref: '#/definitions/Notification'
+
+    put:
+      operationId: "business.notification_put"
+      summary: "Update notification"
+      parameters:
+        - in: path
+          name: notifid
+          required: true
+          type: integer
+          minimum: 1
+          description: "The ID of the notification to update."
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/Notification'
+      responses:
+        200:
+          description: "Successful notification"
+          schema:
+            $ref: '#/definitions/Notification'
+
+    delete:
+      operationId: "business.notification_delete"
+      summary: "Returns notification"
+      parameters:
+        - in: path
+          name: notifid
+          required: true
+          type: integer
+          minimum: 1
+          description: "The ID of the notification to delete."
+      responses:
+        200:
+          description: "Successful notification"
+
+
+  /business/qrcode:
+    get:
+      operationId: "business.qrcode.get"
+      summary: "Returns QR Code of the facility queue"
+      responses:
+        200:
+          description: "URI to QR Code"
+          schema:
+            type: string
+
+    post:
+      operationId: "business.qrcode.get"
+      summary: "Generates QR Code of the facility queue"
+      responses:
+        200:
+          description: "URI to QR Code"
+          schema:
+            type: string
+
+
+  /business/users/health:
+    get:
+      operationId: "business.users.health"
+      summary: "health status report"
+      responses:
+        200:
+          description: "Successful health status report"
+          schema:
+            $ref: '#/definitions/FacilityQueueUsers'
+
+
+  /business/users/queureport:
+    get:
+      operationId: "business.users.health"
+      summary: "health status report"
+      responses:
+        200:
+          description: "Successful health status report"
+          schema:
+            $ref: '#/definitions/FacilityQueueUsers'
+
+
+definitions:
+  Business:
+    allOf:
+      - $ref: '#/definitions/Address'
+      - type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          description:
+            type: string
+          phone_number:
+            type: string
+          email:
+            type: string
+          latitude:
+            type: number
+          longitude:
+            type: number
+
+  Businesses:
+    type: array
+    items:
+      $ref: '#/definitions/Business'

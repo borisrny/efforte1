@@ -1,0 +1,51 @@
+paths:
+
+  /loadtest/vitals/{userKey}/{facilityId}:
+    post:
+      operationId: "loadtest.vitals.post"
+      summary: "vitals"
+      parameters:
+        - in: path
+          name: userKey
+          required: true
+          type: string
+        - in: path
+          name: facilityId
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/Vitals'
+      responses:
+        201:
+          description: "Add Vitals"
+
+
+  /users/self/laodtestqr:
+    post:
+      operationId: "usersself.laodtestqr.post"
+      responses:
+        201:
+          description: "OK"
+          content:
+            image/*:
+              schema:
+                type: string
+                format: binary
+
+
+  /users/self/related/{userid}/laodtestqr:
+    post:
+      operationId: "usersselfrelated.laodtestqr.post"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+      responses:
+        201:
+          description: "OK"
+          content:
+            image/*:
+              schema:
+                type: string
+                format: binary

@@ -1,0 +1,83 @@
+paths:
+
+  /users/self/vitals:
+    get:
+      operationId: "uservitals.list"
+      summary: "vitals"
+      responses:
+        200:
+          description: "vitals list"
+          schema:
+            $ref: '#/definitions/VitalsList'
+
+    post:
+      operationId: "vitals.post"
+      summary: "vitals"
+      parameters:
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/Vitals'
+      responses:
+        201:
+          description: "Add Questionnaire"
+          schema:
+            $ref: '#/definitions/Vitals'
+
+
+  /users/vitals:
+    get:
+      operationId: "vitals.list"
+      summary: "vitals"
+      responses:
+        200:
+          description: "vitals list"
+          schema:
+            $ref: '#/definitions/VitalsList'
+
+    post:
+      operationId: "vitals.post"
+      summary: "vitals"
+      parameters:
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/Vitals'
+      responses:
+        201:
+          description: "Add Questionnaire"
+          schema:
+            $ref: '#/definitions/Vitals'
+
+  /vitals/current:
+    get:
+      operationId: "vitals.current"
+      summary: "vitals"
+      responses:
+        201:
+          description: "Get specific test"
+          schema:
+            $ref: '#/definitions/Vitals'
+
+
+definitions:
+
+  Vitals:
+    type: object
+    properties:
+      id:
+        type: number
+      temp:
+        type: number
+      percent:
+        type: number
+      bp:
+        type: string
+      postdate:
+        type: string
+        example: '03-13-2019'
+
+  VitalsList:
+    type: array
+    items:
+      $ref: '#/definitions/Vitals'

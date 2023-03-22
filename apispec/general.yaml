@@ -1,0 +1,29 @@
+paths:
+
+  /about:
+    get:
+      operationId: about.get
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/About'
+
+  /terms:
+    get:
+      operationId: terms.get
+      responses:
+        200:
+          description: "URI to QR Code"
+          schema:
+            type: string
+
+
+definitions:
+
+  About:
+    type: object
+    properties:
+      name:
+        type: string
+      contact:
+        type: string

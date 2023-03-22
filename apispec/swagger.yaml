@@ -1,0 +1,1363 @@
+basePath: /api
+consumes: [application/json]
+definitions:
+  About:
+    properties:
+      contact: {type: string}
+      name: {type: string}
+    type: object
+  AcceptBusiness:
+    properties:
+      token: {type: string}
+    type: object
+  AcceptBusinessItem:
+    properties:
+      id: {type: integer}
+      name: {type: string}
+      status: {type: string}
+    type: object
+  AcceptBusinessList:
+    items: {$ref: '#/definitions/AcceptBusinessItem'}
+    type: array
+  Address:
+    properties:
+      city: {type: string}
+      country: {type: string}
+      county: {type: string}
+      postal: {type: string}
+      state: {type: string}
+      street1: {type: string}
+      street2: {type: string}
+    type: object
+  AuthChangePassword:
+    properties:
+      newPassword: {type: string}
+      oldPassword: {type: string}
+    type: object
+  AuthChangePasswordResp:
+    properties:
+      status: {type: string}
+    type: object
+  AuthForgotPassword:
+    properties:
+      email: {type: string}
+    type: object
+  AuthResponse:
+    properties:
+      token: {type: string}
+    type: object
+  Business:
+    allOf:
+    - {$ref: '#/definitions/Address'}
+    - properties:
+        description: {type: string}
+        email: {type: string}
+        id: {type: integer}
+        latitude: {type: number}
+        longitude: {type: number}
+        name: {type: string}
+        phone_number: {type: string}
+      type: object
+  Businesses:
+    items: {$ref: '#/definitions/Business'}
+    type: array
+  BussinessAccessRequirements:
+    properties:
+      covidTest: {$ref: '#/definitions/COVIDTestRequirements'}
+      questionnaireRequirements: {$ref: '#/definitions/QuestionnaireRequirements'}
+      vitalRequirements: {$ref: '#/definitions/VitalsRequirements'}
+    type: object
+  COVIDTest:
+    properties:
+      date_of_test: {example: 03-13-2019, type: string}
+      id: {type: number}
+      igg: {type: boolean}
+      igm: {type: boolean}
+      overall_status: {type: boolean}
+      picture: {required: false, type: binary}
+      pictureURL: {required: false, type: string}
+      requisition: {required: false, type: binary}
+      requisitionTestURL: {required: false, type: string}
+      viral_ag_load: {type: boolean}
+    type: object
+  COVIDTestRequirements:
+    allOf:
+    - {$ref: '#/definitions/COVIDTest'}
+    - properties:
+        number_of_positives: {type: integer}
+        valid_days: {type: integer}
+      type: object
+  COVIDTests:
+    items: {$ref: '#/definitions/COVIDTest'}
+    type: array
+  FacilityQueueAddResp:
+    items: {$ref: '#/definitions/FacilityQueueAddRespNode'}
+    type: array
+  FacilityQueueAddRespNode:
+    properties:
+      id: {type: integer}
+      status: {type: boolean}
+    type: object
+  FacilityQueueItem:
+    properties:
+      access_status: {type: integer}
+      facilityid: {type: integer}
+      related: {type: integer}
+      time_in: {type: string}
+      time_out: {type: string}
+      time_requested: {type: string}
+      userid: {type: integer}
+    type: object
+  FacilityQueueUser:
+    properties:
+      covidTest: {$ref: '#/definitions/COVIDTest'}
+      questionnaire: {$ref: '#/definitions/Questionnaire'}
+      queueItem: {$ref: '#/definitions/FacilityQueueItem'}
+      requirementsMatch: {type: boolean}
+      user: {$ref: '#/definitions/User'}
+      vitals: {$ref: '#/definitions/Vitals'}
+    type: object
+  FacilityQueueUsers:
+    items: {$ref: '#/definitions/FacilityQueueUser'}
+    type: array
+  HIPPAParams:
+    properties:
+      sendEmail: {type: boolean}
+      ssn: {type: string}
+    type: object
+  HIPPAText:
+    properties:
+      ssn: {type: string}
+      text: {type: string}
+    type: object
+  IDs:
+    items: {type: integer}
+    type: array
+  LoginDescription:
+    properties:
+      companyName: {type: string}
+      firstName: {type: string}
+      lastName: {type: string}
+      username: {type: string}
+    type: object
+  Notification:
+    properties:
+      id: {type: integer}
+      postdate: {example: 03-13-2019, type: string}
+      postername: {type: string}
+      text: {type: string}
+      title: {type: string}
+    type: object
+  Notifications:
+    items: {$ref: '#/definitions/Notification'}
+    type: array
+  ProfileAccess:
+    properties:
+      accesCode:
+        enum: [Allow, Decline, Suspend, Delete]
+        type: string
+      id: {description: company ID, type: integer}
+      name: {description: company name, type: string}
+    type: object
+  ProfileAccessList:
+    items: {$ref: '#/definitions/ProfileAccess'}
+    type: array
+  Questionnaire:
+    properties:
+      aches_pains: {type: boolean}
+      cough: {type: boolean}
+      diarrhea: {type: boolean}
+      fatigue: {type: boolean}
+      fever: {type: boolean}
+      headache: {type: boolean}
+      id: {type: number}
+      loss_of_taste: {type: boolean}
+      nausea_vomiting: {type: boolean}
+      postdate: {example: 03-13-2019, type: string}
+      runny_nose: {type: boolean}
+      shortnes_of_breath: {type: boolean}
+      sneezing: {type: boolean}
+      sore_throat: {type: boolean}
+    type: object
+  QuestionnaireRequirements:
+    allOf:
+    - {$ref: '#/definitions/Questionnaire'}
+    - properties:
+        number_of_positives: {type: integer}
+        valid_hours: {type: integer}
+      type: object
+  Questionnaires:
+    items: {$ref: '#/definitions/Questionnaire'}
+    type: array
+  Registration:
+    allOf:
+    - {$ref: '#/definitions/User'}
+    - properties:
+        password: {type: string}
+        username: {type: string}
+      type: object
+  Role:
+    properties:
+      id: {type: integer}
+      name: {type: string}
+    type: object
+  Roles:
+    items: {$ref: '#/definitions/Role'}
+    type: array
+  TestsSummary:
+    properties:
+      covidtestDate: {type: string}
+      covidtestExpDate: {type: string}
+      questionnairyDate: {type: string}
+      questionnairyExpDate: {type: string}
+      userId: {type: number}
+    type: object
+  TestsSummaryList:
+    items: {$ref: '#/definitions/TestsSummary'}
+    type: array
+  User:
+    allOf:
+    - {$ref: '#/definitions/Address'}
+    - properties:
+        avatar: {required: false, type: string}
+        dob: {example: 03-13-2019, type: string}
+        email: {type: string}
+        first_name: {type: string}
+        id: {type: integer}
+        last_name: {type: string}
+        phone_number: {type: string}
+        roles:
+          items: {type: integer}
+          type: array
+        ssn: {example: 111-11-1111, required: false, type: string}
+        username: {type: string}
+      type: object
+  UserActivation:
+    allOf:
+    - {$ref: '#/definitions/User'}
+    - properties:
+        activationstatus: {type: integer}
+      type: object
+  UserList:
+    items: {$ref: '#/definitions/User'}
+    type: array
+  UserRelated:
+    allOf:
+    - {$ref: '#/definitions/UserUpdate'}
+    - properties:
+        relationReason: {type: string}
+      type: object
+  UserRelatedList:
+    items: {$ref: '#/definitions/UserRelated'}
+    type: array
+  UserUpdate:
+    allOf:
+    - {$ref: '#/definitions/User'}
+    - properties:
+        profileImage: {required: false, type: binary}
+      type: object
+  Users:
+    items: {$ref: '#/definitions/UserActivation'}
+    type: array
+  Vitals:
+    properties:
+      bp: {type: string}
+      id: {type: number}
+      percent: {type: number}
+      postdate: {example: 03-13-2019, type: string}
+      temp: {type: number}
+    type: object
+  VitalsList:
+    items: {$ref: '#/definitions/Vitals'}
+    type: array
+  VitalsRequirements:
+    allOf:
+    - properties:
+        bp_diastolic_h: {type: number}
+        bp_diastolic_l: {type: number}
+        bp_systolic_h: {type: number}
+        bp_systolic_l: {type: number}
+        id: {type: integer}
+        number_of_positives: {type: integer}
+        percent: {type: number}
+        temp: {type: number}
+        valid_hours: {type: integer}
+      type: object
+include: [mix.yaml, covidtest.yaml, bussiness.yaml, user.yaml, userself.yaml, userselfrelated.yaml,
+  facility_queue.yaml, vitals.yaml, facility_filter.yaml, auth.yaml, profile_access.yaml,
+  userselfgrant.yaml, address.yaml, hippa.yaml, general.yaml, loadtest.yaml, testfacility.yaml]
+info: {description: PCI API, title: PCI API, version: 1.0.0}
+paths:
+  /about:
+    get:
+      operationId: about.get
+      responses:
+        200:
+          schema: {$ref: '#/definitions/About'}
+  /auth:
+    post:
+      operationId: auth.post
+      responses:
+        200:
+          schema: {$ref: '#/definitions/AuthResponse'}
+  /business/notifications:
+    get:
+      operationId: business.notification_list
+      parameters:
+      - {default: null, description: Start Date, in: query, name: fromdate, required: false,
+        type: string}
+      - {default: null, description: end Date, in: query, name: todate, required: false,
+        type: string}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/Notifications'}
+      summary: Returns list of notifications
+    post:
+      operationId: business.notification_post
+      parameters:
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/Notification'}
+      responses:
+        201:
+          description: Successful create notification
+          schema: {$ref: '#/definitions/Notification'}
+      summary: Create notification for company users
+  /business/notifications/{notifid}:
+    delete:
+      operationId: business.notification_delete
+      parameters:
+      - {description: The ID of the notification to delete., in: path, minimum: 1,
+        name: notifid, required: true, type: integer}
+      responses:
+        200: {description: Successful notification}
+      summary: Returns notification
+    get:
+      operationId: business.notification_get
+      parameters:
+      - {description: The ID of the notification to return., in: path, minimum: 1,
+        name: notifid, required: true, type: integer}
+      responses:
+        200:
+          description: Successful notification
+          schema: {$ref: '#/definitions/Notification'}
+      summary: Returns notification
+    put:
+      operationId: business.notification_put
+      parameters:
+      - {description: The ID of the notification to update., in: path, minimum: 1,
+        name: notifid, required: true, type: integer}
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/Notification'}
+      responses:
+        200:
+          description: Successful notification
+          schema: {$ref: '#/definitions/Notification'}
+      summary: Update notification
+  /business/qrcode:
+    get:
+      operationId: business.qrcode.get
+      responses:
+        200:
+          description: URI to QR Code
+          schema: {type: string}
+      summary: Returns QR Code of the facility queue
+    post:
+      operationId: business.qrcode.get
+      responses:
+        200:
+          description: URI to QR Code
+          schema: {type: string}
+      summary: Generates QR Code of the facility queue
+  /business/testrequirements:
+    get:
+      operationId: testrequirements.get
+      responses:
+        200:
+          description: Successful read VitalsRequirements
+          schema: {$ref: '#/definitions/BussinessAccessRequirements'}
+      summary: Test requirements for facility
+    post:
+      operationId: testrequirements.post
+      parameters:
+      - in: body
+        name: testrequirements
+        schema: {$ref: '#/definitions/BussinessAccessRequirements'}
+      responses:
+        201:
+          description: Successful create BussinessAccessRequirements
+          schema: {$ref: '#/definitions/BussinessAccessRequirements'}
+    put:
+      operationId: testrequirements.put
+      parameters:
+      - in: body
+        name: testrequirements
+        schema: {$ref: '#/definitions/BussinessAccessRequirements'}
+      responses:
+        201:
+          description: Successful updated BussinessAccessRequirements
+          schema: {$ref: '#/definitions/BussinessAccessRequirements'}
+  /business/users:
+    get:
+      operationId: business.user_list
+      parameters:
+      - default: 0
+        description: 0 - all, 1 - activated, 2 - pending activation, 3 - removed
+        enum: [0, 1, 2, 3]
+        in: query
+        name: status
+        type: integer
+      - {default: null, in: query, name: firstname, required: false, type: string}
+      - {default: null, in: query, name: lastname, required: false, type: string}
+      responses:
+        200:
+          description: Successful read user list
+          schema: {$ref: '#/definitions/Users'}
+      summary: Returns list of users
+    post:
+      operationId: business.create_user
+      parameters:
+      - in: body
+        name: userinfo
+        schema: {$ref: '#/definitions/User'}
+      responses:
+        201:
+          description: Successful create user
+          schema: {$ref: '#/definitions/User'}
+      summary: Create user - user not in DB and HR needs a way to create new user
+  /business/users/health:
+    get:
+      operationId: business.users.health
+      responses:
+        200:
+          description: Successful health status report
+          schema: {$ref: '#/definitions/FacilityQueueUsers'}
+      summary: health status report
+  /business/users/queureport:
+    get:
+      operationId: business.users.health
+      responses:
+        200:
+          description: Successful health status report
+          schema: {$ref: '#/definitions/FacilityQueueUsers'}
+      summary: health status report
+  /business/users/{userid}:
+    delete:
+      operationId: business.delete_user
+      parameters:
+      - {description: The ID of the user to return., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/User'}
+      summary: Unregister from company
+    get:
+      operationId: business.get_user
+      parameters:
+      - {description: The ID of the user to return., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/User'}
+      summary: Returns user by id
+  /business/users/{userid}/invite:
+    post:
+      operationId: business.invite_user
+      parameters:
+      - {description: User ID., in: path, minimum: 1, name: userid, required: true,
+        type: integer}
+      responses:
+        200: {description: Successful send invitation}
+      summary: Invite user by id
+  /business/users/{userid}/suspend:
+    post:
+      operationId: business.suspend_user
+      parameters:
+      - {description: User ID., in: path, minimum: 1, name: userid, required: true,
+        type: integer}
+      responses:
+        200: {description: Successful send invitation}
+      summary: Suspend user - do not require test but still employee
+  /businesses/registration:
+    post:
+      operationId: memberuser.register
+      parameters:
+      - {description: The ID of the business to delete., in: path, minimum: 1, name: businessid,
+        required: true, type: integer}
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/Registration'}
+      responses:
+        200:
+          schema: {$ref: '#/definitions/User'}
+  /changepassword:
+    post:
+      operationId: auth.changepassword
+      parameters:
+      - in: body
+        name: email
+        schema: {$ref: '#/definitions/AuthChangePassword'}
+      responses:
+        200:
+          description: Change reset request
+          schema: {$ref: '#/definitions/AuthChangePasswordResp'}
+  /console/businesses:
+    get:
+      operationId: console.list_businesses
+      responses:
+        200:
+          description: Successful read business list
+          schema: {$ref: '#/definitions/Businesses'}
+      summary: Returns list of businesses
+    post:
+      operationId: console.business_post
+      parameters:
+      - in: body
+        name: bisinesses
+        schema: {$ref: '#/definitions/Business'}
+      responses:
+        201:
+          description: Successful add business
+          schema: {$ref: '#/definitions/Business'}
+      summary: Add/Register business
+  /console/businesses/{businessid}:
+    delete:
+      operationId: console.business_delete
+      parameters:
+      - {description: The ID of the business to delete., in: path, minimum: 1, name: businessid,
+        required: true, type: integer}
+      responses:
+        200: {description: Successful deleted business}
+      summary: Delete business
+    get:
+      operationId: console.business_get
+      parameters:
+      - {description: The ID of the business to return., in: path, minimum: 1, name: businessid,
+        required: true, type: integer}
+      responses:
+        200:
+          description: Successful read business info
+          schema: {$ref: '#/definitions/Business'}
+      summary: Returns business by id
+    put:
+      operationId: console.business_put
+      parameters:
+      - {description: The ID of the business to update., in: path, minimum: 1, name: businessid,
+        required: true, type: integer}
+      - in: body
+        name: business
+        schema: {$ref: '#/definitions/Business'}
+      responses:
+        200:
+          description: Successful updated business
+          schema: {$ref: '#/definitions/Business'}
+      summary: Update business
+  /console/businesses/{businessid}/members:
+    get:
+      operationId: console.business_get_members
+      parameters:
+      - {description: The ID of the business to return., in: path, minimum: 1, name: businessid,
+        required: true, type: integer}
+      responses:
+        200:
+          description: Successful read business info
+          schema: {$ref: '#/definitions/Users'}
+      summary: Returns members by business id
+    post:
+      operationId: console.business_put_member
+      parameters:
+      - {description: The ID of the business to update., in: path, minimum: 1, name: businessid,
+        required: true, type: integer}
+      - in: body
+        name: business
+        schema: {$ref: '#/definitions/User'}
+      responses:
+        200:
+          description: Successful create business member
+          schema: {$ref: '#/definitions/User'}
+      summary: Create business member
+  /console/businesses/{businessid}/members/{memberid}:
+    delete:
+      operationId: console.business_delete_member
+      parameters:
+      - {description: The ID of the business to delete., in: path, minimum: 1, name: businessid,
+        required: true, type: integer}
+      - {description: The ID of the business to delete., in: path, minimum: 1, name: memberid,
+        required: true, type: integer}
+      responses:
+        200: {description: Successful deleted business member}
+      summary: Delete business members
+  /console/businesses/{businessid}/registration:
+    post:
+      operationId: memberuser.register_for_business
+      parameters:
+      - {description: The ID of the business to delete., in: path, minimum: 1, name: businessid,
+        required: true, type: integer}
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/Registration'}
+      responses:
+        200:
+          schema: {$ref: '#/definitions/User'}
+  /covidtest/current:
+    get:
+      operationId: covidtest.current
+      responses:
+        201:
+          description: Get specific test
+          schema: {$ref: '#/definitions/COVIDTest'}
+      summary: covidtest
+  /facilities:
+    get:
+      operationId: facility.list
+      responses:
+        200:
+          description: Successful read list of Business
+          schema: {$ref: '#/definitions/Businesses'}
+      summary: Returns list of Facilities
+    post:
+      operationId: facility.post
+      parameters:
+      - in: body
+        name: facility
+        schema: {$ref: '#/definitions/Business'}
+      responses:
+        200:
+          schema: {$ref: '#/definitions/Business'}
+  /facilities/{recid}:
+    put:
+      operationId: facility.put
+      parameters:
+      - {description: The ID of the Facility to update., in: path, minimum: 1, name: recid,
+        required: true, type: integer}
+      - in: body
+        name: facility
+        schema: {$ref: '#/definitions/Business'}
+      responses:
+        200:
+          description: Successful updated Facility
+          schema: {$ref: '#/definitions/Business'}
+      summary: Update Facility
+  /facility/queue:
+    get:
+      operationId: facilityqueue.get
+      responses:
+        200:
+          description: Successful facility queue
+          schema: {$ref: '#/definitions/FacilityQueueUsers'}
+      summary: Returns facility queue
+  /facility/queue/{facilityId}:
+    post:
+      operationId: facilityqueue.post
+      parameters:
+      - description: facility ID
+        in: path
+        name: facilityId
+        required: true
+        schema: {type: integer}
+      - in: body
+        name: users
+        required: false
+        schema: {$ref: '#/definitions/IDs'}
+      responses:
+        200:
+          description: Successful add user to the queue
+          schema: {$ref: '#/definitions/FacilityQueueAddResp'}
+      summary: Add user to facility queue
+  /facility/queue/{userId}/grant:
+    put:
+      operationId: facilityqueue.put
+      parameters:
+      - description: user ID
+        in: path
+        name: userId
+        required: true
+        schema: {type: integer}
+      - description: grant (true)/decline (false) access
+        in: query
+        name: status
+        required: true
+        schema: {type: boolean}
+      responses:
+        200: {description: Successful add user to the queue}
+      summary: grant/deny access to facility
+  /forgotpassword:
+    post:
+      operationId: auth.forgotpassword
+      parameters:
+      - in: body
+        name: email
+        schema: {$ref: '#/definitions/AuthForgotPassword'}
+      responses:
+        200: {description: Forgot reset request}
+  /loadtest/vitals/{userKey}/{facilityId}:
+    post:
+      operationId: loadtest.vitals.post
+      parameters:
+      - {in: path, name: userKey, required: true, type: string}
+      - {in: path, name: facilityId}
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/Vitals'}
+      responses:
+        201: {description: Add Vitals}
+      summary: vitals
+  /notifications:
+    get:
+      operationId: notification.list
+      responses:
+        200:
+          description: Successful read notification list
+          schema: {$ref: '#/definitions/Notifications'}
+      summary: Returns list of notifications
+    post:
+      operationId: notification.post
+      parameters:
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/Notification'}
+      responses:
+        201:
+          description: Successful create notification
+          schema: {$ref: '#/definitions/Notification'}
+      summary: Create notification
+  /ping:
+    get:
+      operationId: ping.get
+      responses:
+        200: {description: ping result}
+  /questionnaires/current:
+    get:
+      operationId: questionnaires.current
+      responses:
+        201:
+          description: Get specific test
+          schema: {$ref: '#/definitions/Questionnaire'}
+      summary: questionnaires
+  /registration:
+    post:
+      operationId: registration.post
+      parameters:
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/Registration'}
+      responses:
+        200:
+          schema: {$ref: '#/definitions/AuthResponse'}
+  /roles:
+    get:
+      operationId: role.list
+      responses:
+        200:
+          description: Successful read list of roles
+          schema: {$ref: '#/definitions/Roles'}
+      summary: Returns list of roles
+    post:
+      operationId: role.post
+      parameters:
+      - in: body
+        name: role
+        schema: {$ref: '#/definitions/Role'}
+      responses:
+        200:
+          schema: {$ref: '#/definitions/Role'}
+  /terms:
+    get:
+      operationId: terms.get
+      responses:
+        200:
+          description: URI to QR Code
+          schema: {type: string}
+  /testfacilities:
+    get:
+      operationId: testfacility.list
+      responses:
+        200:
+          description: Successful read list of Test Facilities
+          schema: {$ref: '#/definitions/Businesses'}
+      summary: Returns list of Test Facilities
+    post:
+      operationId: testfacility.post
+      parameters:
+      - in: body
+        name: testfacility
+        schema: {$ref: '#/definitions/Business'}
+      responses:
+        200:
+          schema: {$ref: '#/definitions/Business'}
+  /testfacilities/{recid}:
+    put:
+      operationId: testfacility.put
+      parameters:
+      - {description: The ID of the Facility to update., in: path, minimum: 1, name: recid,
+        required: true, type: integer}
+      - in: body
+        name: facility
+        schema: {$ref: '#/definitions/Business'}
+      responses:
+        200:
+          description: Successful updated Business
+          schema: {$ref: '#/definitions/Business'}
+      summary: Update Test Facility
+  /testfacility/patients:
+    get:
+      operationId: testfacilities.patients.get
+      responses:
+        200:
+          description: ''
+          schema: {$ref: '#/definitions/UserList'}
+      summary: ''
+  /testfacility/patients/{userId}:
+    get:
+      operationId: testfacilities.patients.getuser
+      responses:
+        200:
+          description: ''
+          schema: {$ref: '#/definitions/User'}
+      summary: ''
+  /testfacility/patients/{userId}/covid:
+    get:
+      operationId: testfacilities.patients.getusercovid
+      responses:
+        200:
+          description: ''
+          schema: {$ref: '#/definitions/COVIDTests'}
+      summary: ''
+    post:
+      consumes: [multipart/form-data]
+      operationId: testfacilities.patients.postcovid
+      parameters:
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/COVIDTest'}
+      responses:
+        201:
+          description: Add COVIDTest
+          schema: {$ref: '#/definitions/COVIDTests'}
+      summary: covidtest
+  /testfacility/patients/{userId}/vitals:
+    get:
+      operationId: testfacilities.patients.getuservitals
+      responses:
+        200:
+          description: ''
+          schema: {$ref: '#/definitions/VitalsList'}
+      summary: ''
+    post:
+      consumes: [multipart/form-data]
+      operationId: testfacilities.patients.postvitals
+      parameters:
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/Vitals'}
+      responses:
+        201:
+          description: Add Vitals
+          schema: {$ref: '#/definitions/Vitals'}
+      summary: covidtest
+  /users:
+    get:
+      operationId: user.list
+      responses:
+        200:
+          description: Successful read user list
+          schema: {$ref: '#/definitions/Users'}
+      summary: Returns list of users
+    post:
+      operationId: user.post
+      parameters:
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/User'}
+      responses:
+        201:
+          description: Successful create user
+          schema: {$ref: '#/definitions/User'}
+      summary: Create user
+  /users/covidtest:
+    get:
+      operationId: covidtest.list
+      responses:
+        200:
+          description: covidtests list
+          schema: {$ref: '#/definitions/COVIDTests'}
+      summary: covidtests
+    post:
+      consumes: [multipart/form-data]
+      operationId: covidtest.post
+      parameters:
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/COVIDTest'}
+      responses:
+        201:
+          description: Add COVIDTest
+          schema: {$ref: '#/definitions/COVIDTests'}
+      summary: covidtest
+  /users/questionnaires:
+    get:
+      operationId: questionnaires.list
+      responses:
+        200:
+          description: questionnaires list
+          schema: {$ref: '#/definitions/Questionnaires'}
+      summary: questionnaires
+    post:
+      operationId: questionnaires.post
+      parameters:
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/Questionnaire'}
+      responses:
+        201:
+          description: Add Questionnaire
+          schema: {$ref: '#/definitions/Questionnaire'}
+      summary: questionnaires
+  /users/self:
+    get:
+      operationId: userself.get
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/User'}
+      summary: Returns user info
+    put:
+      consumes: [multipart/form-data]
+      operationId: userself.put
+      parameters:
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/UserUpdate'}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/User'}
+      summary: Update user info
+  /users/self/acceptbusiness:
+    get:
+      operationId: userselfacceptbusiness.put
+      responses:
+        200:
+          description: Successful read VitalsRequirements
+          schema: {$ref: '#/definitions/AcceptBusinessList'}
+      summary: List businesses
+    put:
+      operationId: userselfacceptbusiness.put
+      parameters:
+      - in: body
+        name: inviteCode
+        schema: {$ref: '#/definitions/AcceptBusiness'}
+      responses:
+        200: {description: ''}
+      summary: Accept business invite
+  /users/self/acceptbusiness/{recordId}:
+    delete:
+      operationId: userselfacceptbusiness.remove
+      parameters:
+      - {description: The ID of the user to return., in: path, minimum: 1, name: recordId,
+        required: true, type: integer}
+      responses:
+        200:
+          description: Successful read VitalsRequirements
+          schema: {$ref: '#/definitions/AcceptBusinessList'}
+      summary: ''
+  /users/self/covidtest:
+    get:
+      operationId: userself.covidtest.get
+      responses:
+        200:
+          description: Successful read user covidtest
+          schema: {$ref: '#/definitions/COVIDTest'}
+      summary: Returns user covidtest
+    post:
+      consumes: [multipart/form-data]
+      operationId: userself.covidtest.post
+      parameters:
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/COVIDTest'}
+      responses:
+        200:
+          description: Successful read user covidtest
+          schema: {$ref: '#/definitions/COVIDTest'}
+      summary: Create user covidtest
+  /users/self/covidtest/history:
+    get:
+      operationId: userself.covidtest.get_history
+      responses:
+        200:
+          description: Successful read user covidtest
+          schema: {$ref: '#/definitions/COVIDTests'}
+      summary: Returns user covidtest
+  /users/self/covidtest/{testId}:
+    put:
+      consumes: [multipart/form-data]
+      operationId: userself.covidtest.put
+      parameters:
+      - {in: path, name: testId, required: true, type: integer}
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/COVIDTest'}
+      responses:
+        200:
+          description: Successful read user covidtest
+          schema: {$ref: '#/definitions/COVIDTest'}
+      summary: Update user covidtest
+  /users/self/hippa:
+    get:
+      operationId: userself.hippa.get
+      responses:
+        200:
+          description: text
+          schema: {$ref: '#/definitions/HIPPAText'}
+      summary: Returns HIPPA
+    post:
+      operationId: userself.hippa.post
+      parameters:
+      - in: body
+        name: params
+        schema: {$ref: '#/definitions/HIPPAParams'}
+      responses:
+        200: {description: Successful read user info}
+      summary: Accept HIPPA
+  /users/self/image:
+    post:
+      consumes: [multipart/form-data]
+      parameters:
+      - {description: The file to upload., in: formData, name: avatar, type: file}
+      summary: Uploads a file.
+  /users/self/laodtestqr:
+    post:
+      operationId: usersself.laodtestqr.post
+      responses:
+        201:
+          content:
+            image/*:
+              schema: {format: binary, type: string}
+          description: OK
+  /users/self/logindescription:
+    get:
+      operationId: usersellogindescription.get
+      responses:
+        200:
+          description: ''
+          schema: {$ref: '#/definitions/LoginDescription'}
+      summary: ''
+  /users/self/profileaccess:
+    get:
+      operationId: userprofileaccess.get
+      responses:
+        200:
+          schema: {$ref: '#/definitions/ProfileAccessList'}
+      summary: Returns list of companies
+  /users/self/profileaccess/{companyId}:
+    put:
+      operationId: userprofileaccess.put
+      parameters:
+      - in: body
+        name: grantAccess
+        schema: {$ref: '#/definitions/ProfileAccess'}
+      responses:
+        200:
+          schema: {$ref: '#/definitions/ProfileAccessList'}
+      summary: Returns list of companies
+  /users/self/questionnaire:
+    get:
+      operationId: userself.questionnaire.get
+      responses:
+        200:
+          description: Successful read user questionnaire
+          schema: {$ref: '#/definitions/Questionnaire'}
+      summary: Returns user questionnaire
+    post:
+      operationId: userself.questionnaire.put
+      parameters:
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/Questionnaire'}
+      responses:
+        200:
+          description: Successful read user Questionnaire
+          schema: {$ref: '#/definitions/Questionnaire'}
+      summary: Update user questionnaire
+  /users/self/related:
+    get:
+      operationId: userselfrelated.get
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/UserRelatedList'}
+      summary: Returns related users
+    post:
+      consumes: [multipart/form-data]
+      operationId: userselfrelated.post
+      parameters:
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/UserRelated'}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/UserRelated'}
+      summary: Create related user info
+  /users/self/related/{userid}:
+    delete:
+      operationId: userselfrelated.delete
+      parameters:
+      - {description: The ID of the user to delete., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      responses:
+        200: {description: Successful deleted user}
+      summary: Delete user
+    get:
+      operationId: userselfrelated.get
+      parameters:
+      - {description: The ID of the user to return., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/User'}
+      summary: Returns user by id
+    put:
+      consumes: [multipart/form-data]
+      operationId: userselfrelated.put
+      parameters:
+      - {description: The ID of the user to return., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/UserRelated'}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/UserRelated'}
+      summary: Update user by id
+  /users/self/related/{userid}/covidtest:
+    get:
+      operationId: userselfrelated.covidtest.get
+      responses:
+        200:
+          description: Successful read user covidtest
+          schema: {$ref: '#/definitions/COVIDTest'}
+      summary: Returns user covidtest
+    post:
+      operationId: userselfrelated.covidtest.put
+      parameters:
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/COVIDTest'}
+      responses:
+        200:
+          description: Successful read user covidtest
+          schema: {$ref: '#/definitions/COVIDTest'}
+      summary: Update user covidtest
+  /users/self/related/{userid}/covidtest/history:
+    get:
+      operationId: userselfrelated.covidtest.get_history
+      parameters:
+      - {in: path, minimum: 1, name: userid, required: true, type: integer}
+      responses:
+        200:
+          description: Successful read user covidtest
+          schema: {$ref: '#/definitions/COVIDTests'}
+      summary: Returns user covidtest
+  /users/self/related/{userid}/covidtest/{testId}:
+    put:
+      consumes: [multipart/form-data]
+      operationId: userselfrelated.covidtest.put
+      parameters:
+      - {in: path, name: testId, required: true, type: integer}
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/COVIDTest'}
+      responses:
+        200:
+          description: Successful read user covidtest
+          schema: {$ref: '#/definitions/COVIDTest'}
+      summary: Update user covidtest
+  /users/self/related/{userid}/hippa:
+    get:
+      operationId: userself.hippa.get
+      parameters:
+      - {in: path, name: userid, required: true, type: integer}
+      responses:
+        200:
+          description: text
+          schema: {$ref: '#/definitions/HIPPAText'}
+      summary: Returns HIPPA
+    post:
+      operationId: userself.hippa.post
+      parameters:
+      - {in: path, name: userid, required: true, type: integer}
+      - in: body
+        name: params
+        schema: {$ref: '#/definitions/HIPPAParams'}
+      responses:
+        200: {description: Successful read user info}
+      summary: Accept HIPPA
+  /users/self/related/{userid}/laodtestqr:
+    post:
+      operationId: usersselfrelated.laodtestqr.post
+      parameters:
+      - {in: path, name: userid, required: true, type: integer}
+      responses:
+        201:
+          content:
+            image/*:
+              schema: {format: binary, type: string}
+          description: OK
+  /users/self/related/{userid}/questionnaire:
+    get:
+      operationId: userselfrelated.questionnaire.get
+      responses:
+        200:
+          description: Successful read user questionnaire
+          schema: {$ref: '#/definitions/Questionnaire'}
+      summary: Returns user questionnaire
+    post:
+      operationId: userselfrelated.questionnaire.put
+      parameters:
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/Questionnaire'}
+      responses:
+        200:
+          description: Successful read user Questionnaire
+          schema: {$ref: '#/definitions/Questionnaire'}
+      summary: Update user questionnaire
+  /users/self/related/{userid}/vitals:
+    get:
+      operationId: userselfrelated.vitals.get
+      responses:
+        200:
+          description: Successful read user vitals
+          schema: {$ref: '#/definitions/VitalsList'}
+      summary: Returns user vitals
+    post:
+      operationId: userselfrelated.vitals.put
+      parameters:
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/Vitals'}
+      responses:
+        200:
+          description: Successful read user vitals
+          schema: {$ref: '#/definitions/Vitals'}
+      summary: Update user vitals
+  /users/self/teststatuses:
+    get:
+      operationId: userselfteststatuses.get
+      responses:
+        200:
+          description: Successful read user covidtest
+          schema: {$ref: '#/definitions/TestsSummaryList'}
+      summary: Returns user + related test statuses
+  /users/self/vitals:
+    get:
+      operationId: uservitals.list
+      responses:
+        200:
+          description: vitals list
+          schema: {$ref: '#/definitions/VitalsList'}
+      summary: vitals
+    post:
+      operationId: vitals.post
+      parameters:
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/Vitals'}
+      responses:
+        201:
+          description: Add Questionnaire
+          schema: {$ref: '#/definitions/Vitals'}
+      summary: vitals
+  /users/vitals:
+    get:
+      operationId: vitals.list
+      responses:
+        200:
+          description: vitals list
+          schema: {$ref: '#/definitions/VitalsList'}
+      summary: vitals
+    post:
+      operationId: vitals.post
+      parameters:
+      - in: body
+        name: record
+        schema: {$ref: '#/definitions/Vitals'}
+      responses:
+        201:
+          description: Add Questionnaire
+          schema: {$ref: '#/definitions/Vitals'}
+      summary: vitals
+  /users/{userid}:
+    delete:
+      operationId: user.delete
+      parameters:
+      - {description: The ID of the user to delete., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      responses:
+        200: {description: Successful deleted user}
+      summary: Delete user
+    get:
+      operationId: user.get
+      parameters:
+      - {description: The ID of the user to return., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/User'}
+      summary: Returns user by id
+    put:
+      operationId: user.put
+      parameters:
+      - {description: The ID of the user to return., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      - in: body
+        name: user
+        schema: {$ref: '#/definitions/User'}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/User'}
+      summary: Update user by id
+  /users/{userid}/notifications:
+    get:
+      operationId: user.get_notifications
+      parameters:
+      - {description: The ID of the user to return., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/Notifications'}
+      summary: Returns notifications for user
+  /users/{userid}/notifications/{notifid}:
+    get:
+      operationId: user.get_notification
+      parameters:
+      - {description: The ID of the user to return., in: path, minimum: 1, name: userid,
+        required: true, type: integer}
+      - {description: The ID of the notification to return., in: path, minimum: 1,
+        name: notifid, required: true, type: integer}
+      responses:
+        200:
+          description: Successful read user info
+          schema: {$ref: '#/definitions/Notification'}
+      summary: Returns notifications for user
+  /vitals/current:
+    get:
+      operationId: vitals.current
+      responses:
+        201:
+          description: Get specific test
+          schema: {$ref: '#/definitions/Vitals'}
+      summary: vitals
+produces: [application/json]
+swagger: '2.0'

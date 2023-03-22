@@ -1,0 +1,16 @@
+TABLE='roles'
+SQL="
+drop TABLE IF EXISTS  ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+  name character varying
+);
+insert into ${SCHEMA}.${TABLE} (name) values ('admin');
+insert into ${SCHEMA}.${TABLE} (name) values ('HR');
+insert into ${SCHEMA}.${TABLE} (name) values ('facility');
+insert into ${SCHEMA}.${TABLE} (name) values ('testfacility');
+insert into ${SCHEMA}.${TABLE} (name) values ('user');
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"
+

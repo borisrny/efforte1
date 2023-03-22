@@ -1,0 +1,13 @@
+TABLE='userrelated'
+SQL="
+drop TABLE IF EXISTS ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  parentid integer,
+  userid integer,
+  relationreason TEXT
+);
+CREATE UNIQUE INDEX userrelated_user_idx ON ${SCHEMA}.${TABLE} USING btree
+    (parentid ASC NULLS LAST, userid ASC NULLS LAST) TABLESPACE pg_default;
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"

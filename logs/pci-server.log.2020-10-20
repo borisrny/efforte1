@@ -1,0 +1,249 @@
+PID:22594 2020-10-24 17:03:51,800 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+PID:22594 2020-10-24 17:03:51,801 - werkzeug - INFO -  * Restarting with stat
+PID:22596 2020-10-24 17:03:52,176 - werkzeug - WARNING -  * Debugger is active!
+PID:22596 2020-10-24 17:03:52,182 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:22596 2020-10-24 17:19:59,683 - werkzeug - INFO -  * Detected change in '/Users/boris/PycharmProjects/pci-service/src/model/facility_queue.py', reloading
+PID:22594 2020-10-24 17:19:59,728 - werkzeug - INFO -  * Restarting with stat
+PID:22717 2020-10-24 17:20:00,129 - werkzeug - WARNING -  * Debugger is active!
+PID:22717 2020-10-24 17:20:00,133 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:22717 2020-10-24 17:24:57,312 - werkzeug - INFO -  * Detected change in '/Users/boris/PycharmProjects/pci-service/src/model/facility_queue.py', reloading
+PID:22594 2020-10-24 17:24:57,367 - werkzeug - INFO -  * Restarting with stat
+PID:22764 2020-10-24 17:24:57,812 - werkzeug - WARNING -  * Debugger is active!
+PID:22764 2020-10-24 17:24:57,817 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:22764 2020-10-24 17:26:09,084 - werkzeug - INFO -  * Detected change in '/Users/boris/PycharmProjects/pci-service/src/model/facility_queue.py', reloading
+PID:22594 2020-10-24 17:26:09,127 - werkzeug - INFO -  * Restarting with stat
+PID:22787 2020-10-24 17:26:09,503 - werkzeug - WARNING -  * Debugger is active!
+PID:22787 2020-10-24 17:26:09,507 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:22787 2020-10-24 17:27:24,847 - werkzeug - INFO -  * Detected change in '/Users/boris/PycharmProjects/pci-service/src/util/pg.py', reloading
+PID:22594 2020-10-24 17:27:24,890 - werkzeug - INFO -  * Restarting with stat
+PID:22824 2020-10-24 17:27:25,299 - werkzeug - WARNING -  * Debugger is active!
+PID:22824 2020-10-24 17:27:25,303 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:22824 2020-10-24 17:30:07,164 - werkzeug - INFO -  * Detected change in '/Users/boris/PycharmProjects/pci-service/src/util/pg.py', reloading
+PID:22594 2020-10-24 17:30:07,210 - werkzeug - INFO -  * Restarting with stat
+PID:22861 2020-10-24 17:30:07,615 - werkzeug - WARNING -  * Debugger is active!
+PID:22861 2020-10-24 17:30:07,619 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:22861 2020-10-24 17:30:10,681 - werkzeug - INFO -  * Detected change in '/Users/boris/PycharmProjects/pci-service/src/model/facility_queue.py', reloading
+PID:22594 2020-10-24 17:30:10,722 - werkzeug - INFO -  * Restarting with stat
+PID:22867 2020-10-24 17:30:11,106 - werkzeug - WARNING -  * Debugger is active!
+PID:22867 2020-10-24 17:30:11,110 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:22867 2020-10-24 17:30:33,597 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:33] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:30:34,910 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:34] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:30:53,325 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:53] "[37mOPTIONS /api/auth?appType=facility HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:30:53,790 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:53] "[37mPOST /api/auth?appType=facility HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:30:53,836 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:53] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:30:54,518 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:54] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:30:54,524 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:54] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:30:56,719 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:56] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:30:59,056 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:59] "[37mOPTIONS /api/business/qrcode HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:30:59,699 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:30:59] "[37mGET /api/business/qrcode HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:33:16,649 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:33:16] "[37mOPTIONS /api/business/qrcode HTTP/1.1[0m" 200 -
+PID:22867 2020-10-24 17:33:17,916 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:33:17] "[37mPOST /api/business/qrcode HTTP/1.1[0m" 200 -
+PID:23165 2020-10-24 17:34:46,379 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+PID:23165 2020-10-24 17:34:46,380 - werkzeug - INFO -  * Restarting with stat
+PID:23166 2020-10-24 17:34:46,837 - werkzeug - WARNING -  * Debugger is active!
+PID:23166 2020-10-24 17:34:46,842 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:23166 2020-10-24 17:34:50,239 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:34:50] "[37mOPTIONS /api/business/qrcode HTTP/1.1[0m" 200 -
+PID:23166 2020-10-24 17:34:51,687 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 17:34:51] "[37mPOST /api/business/qrcode HTTP/1.1[0m" 200 -
+PID:23177 2020-10-24 17:35:52,097 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+PID:23177 2020-10-24 17:35:52,097 - werkzeug - INFO -  * Restarting with stat
+PID:23179 2020-10-24 17:35:52,452 - werkzeug - WARNING -  * Debugger is active!
+PID:23179 2020-10-24 17:35:52,456 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:23179 2020-10-24 17:44:37,704 - werkzeug - INFO -  * Detected change in '/Users/boris/PycharmProjects/pci-service/src/util/pg.py', reloading
+PID:23177 2020-10-24 17:44:37,752 - werkzeug - INFO -  * Restarting with stat
+PID:23294 2020-10-24 17:44:38,178 - werkzeug - WARNING -  * Debugger is active!
+PID:23294 2020-10-24 17:44:38,184 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:23294 2020-10-24 18:06:53,548 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:06:53] "[31m[1mPOST //api/facility/queue/3 HTTP/1.1[0m" 422 -
+PID:23294 2020-10-24 18:08:57,957 - src.model.facility_queue - INFO - Facility: 3, User: 77, related: [236]
+PID:23294 2020-10-24 18:09:00,425 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:09:00] "[37mPOST //api/facility/queue/3 HTTP/1.1[0m" 200 -
+PID:23294 2020-10-24 18:39:15,803 - werkzeug - INFO -  * Detected change in '/Users/boris/PycharmProjects/pci-service/src/model/facility_queue.py', reloading
+PID:23177 2020-10-24 18:39:15,868 - werkzeug - INFO -  * Restarting with stat
+PID:23574 2020-10-24 18:39:16,337 - werkzeug - WARNING -  * Debugger is active!
+PID:23574 2020-10-24 18:39:16,344 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:23574 2020-10-24 18:39:26,536 - werkzeug - INFO -  * Detected change in '/Users/boris/PycharmProjects/pci-service/src/model/facility_queue.py', reloading
+PID:23177 2020-10-24 18:39:26,580 - werkzeug - INFO -  * Restarting with stat
+PID:23585 2020-10-24 18:39:26,965 - werkzeug - WARNING -  * Debugger is active!
+PID:23585 2020-10-24 18:39:26,969 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:23585 2020-10-24 18:41:07,877 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:41:07] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:41:07,881 - __main__ - ERROR - 'NoneType' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 122, in wrapper
+    resp = view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 113, in wrapper
+    return view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 270, in decorated_view
+    elif not current_user.is_authenticated:
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 27, in load_user_from_rqst
+    user = auth_uid_from_rqst(rqst)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 59, in auth_uid_from_rqst
+    auth_keys = auth_headers.split()
+AttributeError: 'NoneType' object has no attribute 'split'
+PID:23585 2020-10-24 18:41:07,888 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:41:07] "[31m[1mGET /api/users/self/logindescription HTTP/1.1[0m" 450 -
+PID:23585 2020-10-24 18:41:16,526 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:41:16] "[37mOPTIONS /api/auth?appType=facility HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:41:17,325 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:41:17] "[37mPOST /api/auth?appType=facility HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:41:17,375 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:41:17] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:41:18,063 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:41:18] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:41:18,070 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:41:18] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:41:20,563 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:41:20] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:41:23,281 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:41:23] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:42:37,720 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:42:37] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:42:37,814 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:42:37] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:42:38,715 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:42:38] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:42:38,735 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:42:38] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:42:38,964 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:42:38] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23585 2020-10-24 18:42:41,305 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:42:41] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23740 2020-10-24 18:45:26,886 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+PID:23740 2020-10-24 18:45:26,886 - werkzeug - INFO -  * Restarting with stat
+PID:23741 2020-10-24 18:45:27,271 - werkzeug - WARNING -  * Debugger is active!
+PID:23741 2020-10-24 18:45:27,276 - werkzeug - INFO -  * Debugger PIN: 324-727-678
+PID:23741 2020-10-24 18:45:29,367 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:45:29] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:45:34,259 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:45:34] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:46:58,986 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:46:58] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:46:59,069 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:46:59] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:46:59,951 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:46:59] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:46:59,965 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:46:59] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:47:00,217 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:47:00] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:47:02,597 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:47:02] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:47:55,698 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:47:55] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:47:55,733 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:47:55] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:47:56,828 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:47:56] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:47:56,837 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:47:56] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:47:57,083 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:47:57] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:47:59,629 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:47:59] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:49:17,559 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:49:17] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:49:17,591 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:49:17] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:49:18,814 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:49:18] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:49:18,823 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:49:18] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:49:19,030 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:49:19] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 18:49:21,382 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 18:49:21] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:00,783 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:00] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:00,816 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:00] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:03,284 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:03] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:03,291 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:03] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:06,138 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:06] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:19,309 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:19] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:19,339 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:19] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:19,399 - __main__ - ERROR - SSL SYSCALL error: Operation timed out
+Traceback (most recent call last):
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 122, in wrapper
+    resp = view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/api/validators.py", line 113, in wrapper
+    return view(*args, **kwargs)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 270, in decorated_view
+    elif not current_user.is_authenticated:
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 331, in _load_user
+    user = self._load_user_from_request(request)
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 390, in _load_user_from_request
+    user = self._request_callback(request)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 27, in load_user_from_rqst
+    user = auth_uid_from_rqst(rqst)
+  File "/Users/boris/PycharmProjects/pci-service/src/pciapi/auth/auth.py", line 63, in auth_uid_from_rqst
+    rec = memberuser_get_user(u_id)
+  File "/Users/boris/PycharmProjects/pci-service/src/model/memberuser.py", line 17, in memberuser_get_user
+    user_rec = user_get(recid)
+  File "/Users/boris/PycharmProjects/pci-service/src/model/user.py", line 59, in user_get
+    doc = pg_get(util_get_config(), 'users', recid)
+  File "/Users/boris/PycharmProjects/pci-service/src/util/pg.py", line 75, in pg_get
+    cur.execute('SELECT * FROM {} WHERE {}=%s'.format(table, idfield), (recid,))
+  File "/Users/boris/PycharmProjects/pci-service/venv/lib/python3.7/site-packages/psycopg2/extras.py", line 248, in execute
+    return super(RealDictCursor, self).execute(query, vars)
+psycopg2.DatabaseError: SSL SYSCALL error: Operation timed out
+
+PID:23741 2020-10-24 19:08:19,409 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:19] "[31m[1mGET /api/users/self/logindescription HTTP/1.1[0m" 450 -
+PID:23741 2020-10-24 19:08:20,425 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:20] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:20,432 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:20] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:20,627 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:20] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:08:22,914 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:08:22] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:10:11,321 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:10:11] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:10:11,356 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:10:11] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:10:12,410 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:10:12] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:10:12,420 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:10:12] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:10:12,610 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:10:12] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:10:14,918 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:10:14] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:13:06,580 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:13:06] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:13:06,610 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:13:06] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:13:07,709 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:13:07] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:13:07,717 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:13:07] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:13:08,009 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:13:08] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:13:10,355 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:13:10] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:14:18,479 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:14:18] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:14:18,513 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:14:18] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:14:19,665 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:14:19] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:14:19,672 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:14:19] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:14:19,923 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:14:19] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:14:22,329 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:14:22] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:23,010 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:23] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:23,113 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:23] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:24,250 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:24] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:24,266 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:24] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:24,308 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:24] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:26,729 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:26] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:37,371 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:37] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:37,410 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:37] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:38,441 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:38] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:38,448 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:38] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:38,682 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:38] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:16:41,113 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:16:41] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:13,022 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:13] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:13,107 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:13] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:13,973 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:13] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:14,000 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:14] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:14,244 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:14] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:16,625 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:16] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:30,363 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:30] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:30,396 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:30] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:31,656 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:31] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:31,665 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:31] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:31,717 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:31] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:17:34,081 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:17:34] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:19:48,247 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:19:48] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:19:48,280 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:19:48] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:19:49,610 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:19:49] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:19:49,619 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:19:49] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:19:49,667 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:19:49] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:19:52,002 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:19:52] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:20:29,688 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:20:29] "[37mOPTIONS /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:20:29,756 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:20:29] "[37mOPTIONS /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:20:30,845 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:20:30] "[37mGET /api/business/testrequirements HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:20:30,864 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:20:30] "[37mOPTIONS /api/facility/queue HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:20:31,110 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:20:31] "[37mGET /api/users/self/logindescription HTTP/1.1[0m" 200 -
+PID:23741 2020-10-24 19:20:33,563 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2020 19:20:33] "[37mGET /api/facility/queue HTTP/1.1[0m" 200 -

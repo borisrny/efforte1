@@ -1,0 +1,22 @@
+
+TABLE='userfacilitytestaccess'
+SQL="
+drop TABLE IF EXISTS  ${SCHEMA}.${TABLE} CASCADE;
+create TABLE ${SCHEMA}.${TABLE}
+(
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+  userid integer NOT NULL,
+  facilityid integer NOT NULL,
+  status integer default 1,
+  posttimestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  postuser integer NOT NULL,
+  updatetimestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updateuser integer NOT NULL
+);
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"
+
+IDXNAME='userfacilitytestaccess_user_facilty_idx'
+IDXDEF='(userid ASC NULLS LAST, facilityid ASC NULLS LAST)'
+SQL="CREATE UNIQUE INDEX ${IDXNAME} ON ${SCHEMA}.${TABLE} USING btree ${IDXDEF} TABLESPACE pg_default;"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"

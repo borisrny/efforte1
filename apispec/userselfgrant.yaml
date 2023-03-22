@@ -1,0 +1,62 @@
+paths:
+
+  /users/self/acceptbusiness:
+    get:
+      operationId: "userselfacceptbusiness.put"
+      summary: "List businesses"
+      responses:
+        200:
+          description: "Successful read VitalsRequirements"
+          schema:
+            $ref: '#/definitions/AcceptBusinessList'
+
+    put:
+      operationId: "userselfacceptbusiness.put"
+      summary: "Accept business invite"
+      parameters:
+        - in: body
+          name: inviteCode
+          schema:
+            $ref: '#/definitions/AcceptBusiness'
+      responses:
+        200:
+          description: ""
+
+  /users/self/acceptbusiness/{recordId}:
+    delete:
+      operationId: "userselfacceptbusiness.remove"
+      summary: ""
+      parameters:
+        - in: path
+          name: recordId
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to return.
+      responses:
+        200:
+          description: "Successful read VitalsRequirements"
+          schema:
+            $ref: '#/definitions/AcceptBusinessList'
+
+definitions:
+  AcceptBusiness:
+    type: object
+    properties:
+      token:
+        type: string
+
+  AcceptBusinessItem:
+    type: object
+    properties:
+      id:
+        type: integer
+      status:
+        type: string
+      name:
+        type: string
+
+  AcceptBusinessList:
+    type: array
+    items:
+      $ref: '#/definitions/AcceptBusinessItem'

@@ -1,0 +1,11 @@
+TABLE='notification'
+
+COLS=('title')
+
+for COL in ${COLS[@]}; do
+    echo $t
+    SQL="ALTER TABLE ${TABLE} ADD COLUMN ${COL} TEXT DEFAULT '';"
+    PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"
+done
+
+

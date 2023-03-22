@@ -1,0 +1,20 @@
+TABLE='customerqueu'
+SQL="
+drop TABLE IF EXISTS ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  userid integer,
+  facilityid integer,
+  time_requested TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  time_in TIMESTAMP WITH TIME ZONE,
+  time_out TIMESTAMP WITH TIME ZONE,
+  access_status integer DEFAULT 1,
+  related integer DEFAULT NULL
+);
+CREATE INDEX customerqueu_user_faciulity_enter_idx ON ${SCHEMA}.${TABLE} USING btree
+    (facilityid, time_requested, userid) TABLESPACE pg_default;
+CREATE SEQUENCE ${SCHEMA}.customerqueue_related_seq
+    INCREMENT 1
+    START 1;
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"

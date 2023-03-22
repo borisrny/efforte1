@@ -1,0 +1,42 @@
+TABLE='facilitytype'
+SQL="
+drop TABLE IF EXISTS  ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+  description character varying
+);
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"
+
+SQL="
+insert into ${SCHEMA}.${TABLE} (description) values ('client');
+insert into ${SCHEMA}.${TABLE} (description) values ('facility');
+insert into ${SCHEMA}.${TABLE} (description) values ('testfacility');
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"
+
+
+TABLE='facility'
+SQL="
+drop TABLE IF EXISTS  ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+  facilitytype integer NOT NULL,
+  name character varying,
+  description character varying,
+  phone_number character varying,
+  email character varying,
+  street1 TEXT NOT NULL,
+  street2 TEXT,
+  city TEXT NOT NULL,
+  county TEXT,
+  state TEXT,
+  postal TEXT NOT NULL,
+  country TEXT default 'US',
+  latitude double precision DEFAULT 0,
+  longitude double precision DEFAULT 0
+);
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"

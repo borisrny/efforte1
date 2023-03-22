@@ -1,0 +1,46 @@
+paths:
+
+  /users/self/profileaccess:
+    get:
+      summary: "Lest companies that requested permanent access to profile and test results"
+      operationId: "userprofileaccess.get"
+      responses:
+        200:
+          schema: {$ref: '#/definitions/ProfileAccessList'}
+      summary: "Returns list of companies"
+
+  /users/self/profileaccess/{companyId}:
+    put:
+      summary: "Allow/decline access"
+      operationId: "userprofileaccess.put"
+      parameters:
+        - in: body
+          name: grantAccess
+          schema:
+            $ref: '#/definitions/ProfileAccess'
+      responses:
+        200:
+          schema: {$ref: '#/definitions/ProfileAccessList'}
+      summary: "Returns list of companies"
+
+
+definitions:
+
+  ProfileAccess:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: "company ID"
+      name:
+        type: string
+        description: "company name"
+      accesCode:
+        type: string
+        enum: [Allow, Decline, Suspend, Delete]
+
+  ProfileAccessList:
+    type: array
+    items:
+      $ref: '#/definitions/ProfileAccess'
+

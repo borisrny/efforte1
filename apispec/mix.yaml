@@ -1,0 +1,461 @@
+paths:
+
+  /ping:
+    get:
+      operationId: "ping.get"
+      responses:
+        200:
+          description: "ping result"
+
+  /facilities:
+    get:
+      operationId: "facility.list"
+      summary: "Returns list of Facilities"
+      responses:
+        200:
+          description: "Successful read list of Business"
+          schema:
+            $ref: '#/definitions/Businesses'
+
+    post:
+      operationId: "facility.post"
+      parameters:
+        - in: body
+          name: facility
+          schema:
+            $ref: '#/definitions/Business'
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/Business'
+
+  /facilities/{recid}:
+    put:
+      operationId: "facility.put"
+      summary: "Update Facility"
+      parameters:
+        - in: path
+          name: recid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the Facility to update.
+        - in: body
+          name: facility
+          schema:
+            $ref: '#/definitions/Business'
+      responses:
+        200:
+          description: "Successful updated Facility"
+          schema:
+            $ref: '#/definitions/Business'
+
+
+  /testfacilities:
+    get:
+      operationId: "testfacility.list"
+      summary: "Returns list of Test Facilities"
+      responses:
+        200:
+          description: "Successful read list of Test Facilities"
+          schema:
+            $ref: '#/definitions/Businesses'
+
+    post:
+      operationId: "testfacility.post"
+      parameters:
+        - in: body
+          name: testfacility
+          schema:
+            $ref: '#/definitions/Business'
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/Business'
+
+  /testfacilities/{recid}:
+    put:
+      operationId: "testfacility.put"
+      summary: "Update Test Facility"
+      parameters:
+        - in: path
+          name: recid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the Facility to update.
+        - in: body
+          name: facility
+          schema:
+            $ref: '#/definitions/Business'
+      responses:
+        200:
+          description: "Successful updated Business"
+          schema:
+            $ref: '#/definitions/Business'
+
+  /roles:
+    get:
+      operationId: "role.list"
+      summary: "Returns list of roles"
+      responses:
+        200:
+          description: "Successful read list of roles"
+          schema:
+            $ref: '#/definitions/Roles'
+
+    post:
+      operationId: "role.post"
+      parameters:
+        - in: body
+          name: role
+          schema:
+            $ref: '#/definitions/Role'
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/Role'
+
+  /users:
+    get:
+      operationId: "user.list"
+      summary: "Returns list of users"
+      responses:
+        200:
+          description: "Successful read user list"
+          schema:
+            $ref: '#/definitions/Users'
+
+    post:
+      operationId: "user.post"
+      summary: "Create user"
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        201:
+          description: "Successful create user"
+          schema:
+            $ref: '#/definitions/User'
+
+  /users/{userid}:
+    get:
+      operationId: "user.get"
+      summary: "Returns user by id"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to return.
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/User'
+
+    put:
+      operationId: "user.put"
+      summary: "Update user by id"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to return.
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/User'
+
+    delete:
+      operationId: "user.delete"
+      summary: "Delete user"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to delete.
+      responses:
+        200:
+          description: "Successful deleted user"
+
+  /users/{userid}/notifications:
+    get:
+      operationId: "user.get_notifications"
+      summary: "Returns notifications for user"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to return.
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/Notifications'
+
+  /users/{userid}/notifications/{notifid}:
+    get:
+      operationId: "user.get_notification"
+      summary: "Returns notifications for user"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the user to return.
+        - in: path
+          name: notifid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the notification to return.
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/Notification'
+
+
+  /notifications:
+    get:
+      operationId: "notification.list"
+      summary: "Returns list of notifications"
+      responses:
+        200:
+          description: "Successful read notification list"
+          schema:
+            $ref: '#/definitions/Notifications'
+
+    post:
+      operationId: "notification.post"
+      summary: "Create notification"
+      parameters:
+        - in: body
+          name: record
+          schema:
+            $ref: '#/definitions/Notification'
+      responses:
+        201:
+          description: "Successful create notification"
+          schema:
+            $ref: '#/definitions/Notification'
+
+  /console/businesses:
+    get:
+      operationId: "console.list_businesses"
+      summary: "Returns list of businesses"
+      responses:
+        200:
+          description: "Successful read business list"
+          schema:
+            $ref: '#/definitions/Businesses'
+
+    post:
+      operationId: "console.business_post"
+      summary: "Add/Register business"
+      parameters:
+        - in: body
+          name: bisinesses
+          schema:
+            $ref: '#/definitions/Business'
+      responses:
+        201:
+          description: "Successful add business"
+          schema:
+            $ref: '#/definitions/Business'
+
+  /console/businesses/{businessid}:
+    get:
+      operationId: "console.business_get"
+      summary: "Returns business by id"
+      parameters:
+        - in: path
+          name: businessid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the business to return.
+      responses:
+        200:
+          description: "Successful read business info"
+          schema:
+            $ref: '#/definitions/Business'
+
+    put:
+      operationId: "console.business_put"
+      summary: "Update business"
+      parameters:
+        - in: path
+          name: businessid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the business to update.
+        - in: body
+          name: business
+          schema:
+            $ref: '#/definitions/Business'
+      responses:
+        200:
+          description: "Successful updated business"
+          schema:
+            $ref: '#/definitions/Business'
+
+    delete:
+      operationId: "console.business_delete"
+      summary: "Delete business"
+      parameters:
+        - in: path
+          name: businessid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the business to delete.
+      responses:
+        200:
+          description: "Successful deleted business"
+
+  /console/businesses/{businessid}/members:
+    get:
+      operationId: "console.business_get_members"
+      summary: "Returns members by business id"
+      parameters:
+        - in: path
+          name: businessid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the business to return.
+      responses:
+        200:
+          description: "Successful read business info"
+          schema:
+            $ref: '#/definitions/Users'
+
+    post:
+      operationId: "console.business_put_member"
+      summary: "Create business member"
+      parameters:
+        - in: path
+          name: businessid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the business to update.
+        - in: body
+          name: business
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        200:
+          description: "Successful create business member"
+          schema:
+            $ref: '#/definitions/User'
+
+  /console/businesses/{businessid}/members/{memberid}:
+    delete:
+      operationId: "console.business_delete_member"
+      summary: "Delete business members"
+      parameters:
+        - in: path
+          name: businessid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the business to delete.
+        - in: path
+          name: memberid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the business to delete.
+      responses:
+        200:
+          description: "Successful deleted business member"
+
+
+  /console/businesses/{businessid}/registration:
+    post:
+      operationId: "memberuser.register_for_business"
+      parameters:
+        - in: path
+          name: businessid
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the business to delete.
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/Registration'
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/User'
+
+
+definitions:
+  Role:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+
+  Roles:
+    type: array
+    items:
+      $ref: '#/definitions/Role'
+
+
+  Registration:
+    allOf:
+      - $ref: '#/definitions/User'
+      - type: object
+        properties:
+          username:
+            type: string
+          password:
+            type: string
+
+  Notification:
+    type: object
+    properties:
+      id:
+        type: integer
+      title:
+        type: string
+      text:
+        type: string
+      postername:
+        type: string
+      postdate:
+        type: string
+        example: '03-13-2019'
+
+  Notifications:
+    type: array
+    items:
+      $ref: '#/definitions/Notification'
+
+  IDs:
+    type: array
+    items:
+      type: integer

@@ -1,0 +1,71 @@
+paths:
+
+  /users/self/hippa:
+    get:
+      operationId: "userself.hippa.get"
+      summary: "Returns HIPPA"
+      responses:
+        200:
+          description: "text"
+          schema:
+            $ref: '#/definitions/HIPPAText'
+
+    post:
+      operationId: "userself.hippa.post"
+      summary: "Accept HIPPA"
+      parameters:
+        - in: body
+          name: params
+          schema:
+            $ref: '#/definitions/HIPPAParams'
+      responses:
+        200:
+          description: "Successful read user info"
+
+  /users/self/related/{userid}/hippa:
+    get:
+      operationId: "userself.hippa.get"
+      summary: "Returns HIPPA"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "text"
+          schema:
+            $ref: '#/definitions/HIPPAText'
+    post:
+      operationId: "userself.hippa.post"
+      summary: "Accept HIPPA"
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          type: integer
+        - in: body
+          name: params
+          schema:
+            $ref: '#/definitions/HIPPAParams'
+      responses:
+        200:
+          description: "Successful read user info"
+
+
+definitions:
+  HIPPAText:
+    type: object
+    properties:
+      text:
+        type: string
+      ssn:
+        type: string
+
+  HIPPAParams:
+    type: object
+    properties:
+      ssn:
+        type: string
+      sendEmail:
+        type: boolean

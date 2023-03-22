@@ -1,0 +1,119 @@
+paths:
+
+  /users/self:
+    get:
+      operationId: "userself.get"
+      summary: "Returns user info"
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/User'
+    put:
+      operationId: "userself.put"
+      summary: "Update user info"
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/UserUpdate'
+      responses:
+        200:
+          description: "Successful read user info"
+          schema:
+            $ref: '#/definitions/User'
+
+  /users/self/questionnaire:
+    get:
+      operationId: "userself.questionnaire.get"
+      summary: "Returns user questionnaire"
+      responses:
+        200:
+          description: "Successful read user questionnaire"
+          schema:
+            $ref: '#/definitions/Questionnaire'
+    post:
+      operationId: "userself.questionnaire.put"
+      summary: "Update user questionnaire"
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/Questionnaire'
+      responses:
+        200:
+          description: "Successful read user Questionnaire"
+          schema:
+            $ref: '#/definitions/Questionnaire'
+
+  /users/self/covidtest:
+    get:
+      operationId: "userself.covidtest.get"
+      summary: "Returns user covidtest"
+      responses:
+        200:
+          description: "Successful read user covidtest"
+          schema:
+            $ref: '#/definitions/COVIDTest'
+
+    post:
+      operationId: "userself.covidtest.post"
+      summary: "Create user covidtest"
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/COVIDTest'
+      responses:
+        200:
+          description: "Successful read user covidtest"
+          schema:
+            $ref: '#/definitions/COVIDTest'
+
+  /users/self/covidtest/{testId}:
+    put:
+      operationId: "userself.covidtest.put"
+      summary: "Update user covidtest"
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: path
+          name: testId
+          type: integer
+          required: true
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/COVIDTest'
+      responses:
+        200:
+          description: "Successful read user covidtest"
+          schema:
+            $ref: '#/definitions/COVIDTest'
+
+  /users/self/covidtest/history:
+    get:
+      operationId: "userself.covidtest.get_history"
+      summary: "Returns user covidtest"
+      responses:
+        200:
+          description: "Successful read user covidtest"
+          schema:
+            $ref: '#/definitions/COVIDTests'
+
+
+  /users/self/image:
+     post:
+       summary: Uploads a file.
+       consumes:
+         - multipart/form-data
+       parameters:
+         - in: formData
+           name: avatar
+           type: file
+           description: The file to upload.
+

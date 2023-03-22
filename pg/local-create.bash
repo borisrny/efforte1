@@ -1,0 +1,6 @@
+USER='postgres'
+PASSWD='Kikiriki1317!'
+DB='pci'
+HOST='localhost'
+SCHEMA='public'
+OWNER='postgres'

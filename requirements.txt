@@ -1,0 +1,16 @@
+Flask
+flask_login
+flask-security
+flask-cors
+Jinja2
+Flask-RESTful
+jsonschema
+six
+psycopg2-binary
+uwsgi
+pyyaml
+singleton_decorator
+authlib
+email_validator
+boto3
+qrcode[pil]

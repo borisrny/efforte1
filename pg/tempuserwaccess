@@ -1,0 +1,18 @@
+TABLE='tempuserwaccess'
+SQL="
+drop TABLE IF EXISTS ${SCHEMA}.${TABLE};
+create TABLE ${SCHEMA}.${TABLE}
+(
+  akey TEXT,
+  userid integer,
+  postuser integer,
+  postdate TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  expiry TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"
+
+IDXNAME='tempuserwaccess_akey_idx'
+IDXDEF='(userid ASC NULLS LAST, akey ASC NULLS LAST)'
+SQL="CREATE UNIQUE INDEX ${IDXNAME} ON ${SCHEMA}.${TABLE} USING btree ${IDXDEF} TABLESPACE pg_default;"
+PGPASSWORD=${PASSWD}  psql -h ${HOST} -U ${USER} -d ${DB} -c "${SQL}"

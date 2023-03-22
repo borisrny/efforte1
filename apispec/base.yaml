@@ -1,0 +1,17 @@
+include: [mix.yaml, covidtest.yaml, bussiness.yaml, user.yaml, userself.yaml,
+          userselfrelated.yaml, facility_queue.yaml, vitals.yaml, facility_filter.yaml,
+          auth.yaml, profile_access.yaml, userselfgrant.yaml, address.yaml, hippa.yaml,
+          general.yaml, loadtest.yaml, testfacility.yaml]
+
+
+swagger: "2.0"
+basePath: "/api"
+
+info:
+  description: PCI API
+  version: "1.0.0"
+  title: PCI API
+consumes:
+  - "application/json"
+produces:
+  - "application/json"

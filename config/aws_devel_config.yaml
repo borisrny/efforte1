@@ -1,0 +1,23 @@
+include: [./config/common.yaml]
+
+apiBaseURL: 'https://pcibackend.com:443/api'
+
+pg:
+  user: postgres
+  pwd: postgres
+  db: pci
+  host: 'devel.coce3ikt7g9w.us-east-2.rds.amazonaws.com'
+  port: 5432
+  schema: public
+  owner: postgres
+
+auth:
+  pubkFile: '/home/ubuntu/.ssh/jwt.pub'
+  privkFile: '/home/ubuntu/.ssh/jwt.pem'
+
+aws:
+  profile: default
+
+s3:
+  name: pci-devel
+

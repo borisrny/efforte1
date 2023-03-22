@@ -1,0 +1,73 @@
+paths:
+
+  /registration:
+    post:
+      operationId: registration.post
+      parameters:
+      - in: body
+        name: user
+        schema:
+          $ref: '#/definitions/Registration'
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/AuthResponse'
+  /auth:
+    post:
+      operationId: auth.post
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/AuthResponse'
+
+  /changepassword:
+    post:
+      operationId: auth.changepassword
+      parameters:
+      - in: body
+        name: email
+        schema: {$ref: '#/definitions/AuthChangePassword'}
+      responses:
+        200:
+          description: Change reset request
+          schema:
+            $ref: '#/definitions/AuthChangePasswordResp'
+
+  /forgotpassword:
+    post:
+      operationId: auth.forgotpassword
+      parameters:
+      - in: body
+        name: email
+        schema: {$ref: '#/definitions/AuthForgotPassword'}
+      responses:
+        200:
+          description: Forgot reset request
+
+
+definitions:
+
+  AuthResponse:
+    type: object
+    properties:
+      token:
+        type: string
+
+  AuthChangePassword:
+    type: object
+    properties:
+      oldPassword:
+        type: string
+      newPassword:
+        type: string
+  AuthChangePasswordResp:
+    type: object
+    properties:
+      status:
+        type: string
+
+  AuthForgotPassword:
+    type: object
+    properties:
+      email:
+        type: string

@@ -1,0 +1,51 @@
+facilityQueueURL: facility/queue/{}
+userFacilityVITALWrite: loadtest/vitals/{}
+
+businessType:
+  client: 1
+  facility: 2
+  testfacility: 3
+
+roles:
+  admin: 1
+  HR: 2
+  facility: 3
+  testfacility: 4
+  user: 5
+
+appTypeRoleMap:
+  console: admin
+  HR: HR
+  facility: facility
+  testfacility: testfacility
+  user: user
+
+userStatusMap:
+  New: 1
+  Pending: 2
+  Active: 3
+  Suspended: 4
+  Deleted: 5
+
+s3:
+  name: bksoftpciimages
+  profile:
+    dir: avatars
+    fileName: picture.jpg
+  covidtest:
+    dir: covidtest
+    fileName: picture.jpg
+  requisition:
+    dir: requisition
+    fileName: picture.jpg
+  facilityQRCode: facilityqueueqrcode/{}/qrcode.png
+
+hippa:
+  file: config/hippa.html
+
+terms:
+  file: config/terms.html
+
+about:
+    name: PCI
+    contact: Steven R
